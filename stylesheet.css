@@ -1,0 +1,69 @@
+html, body {
+	font-family: Calibri;
+	margin: 0px 5px 0px 5px;
+	padding: 0;
+	height: 100%; 
+	position: relative; }
+	
+p {
+	font-size: 20px; 
+	line-height: 1.3; }
+
+a {
+	font-size: 20px;
+	color: #99ccff; 
+	cursor: pointer; 
+	text-decoration: none; }
+a:visited {
+	color: #99ccff; }
+a:hover {
+	color: #66ccff; }
+
+#content {
+	left: 5px;
+	right: 5px; }
+#title {
+	position: relative; 
+	float: none; 
+	text-align: center; 
+	margin: 0 auto; 
+	margin-bottom: 10px; }
+#title-link a:hover {
+	color: #66ccff; }
+.title-Margaret, .title-Yu {
+	font-size: 48px;
+	font-weight: bold;
+	font-family: Comic Sans MS, sans-serif; }
+.title-Margaret {
+	color: #b870ff; }
+.title-Yu {
+	color: #c285ff; }
+
+#intro {
+	clear: both;
+	position: relative;
+	margin: 0;
+	float: left; }
+
+#links {
+	clear: both; 
+	position: relative;
+	margin: 0;
+	float: left; }
+
+hr {
+  border-width: medium medium 1px;
+  border-style: none none dotted;
+  border-color: -moz-use-text-color -moz-use-text-color #d8d4d0;
+  -moz-border-top-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  border-image: none;
+  margin: 0; }
+
+#copyright {
+	display: block;
+	position: absolute;
+	bottom: 0; 
+	right: 5px; }
