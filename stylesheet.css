@@ -11,13 +11,13 @@ p {
 
 a {
 	font-size: 20px;
-	color: #99ccff; 
+	color: #c285ff; 
 	cursor: pointer; 
 	text-decoration: none; }
 a:visited {
-	color: #99ccff; }
+	color: #c285ff; }
 a:hover {
-	color: #66ccff; }
+	color: #b870ff; }
 
 #content {
 	left: 5px;
@@ -28,7 +28,7 @@ a:hover {
 	text-align: center; 
 	margin: 0 auto; 
 	margin-bottom: 10px; }
-#title-link a:hover {
+#title a:hover {
 	color: #66ccff; }
 .title-Margaret, .title-Yu {
 	font-size: 48px;
