@@ -9,39 +9,45 @@
 </head>
 <body>
   <a id="click" class="clickme" onclick="displayBox()"><strong>Click to see what numbers the images on the tiles correspond to.</strong></a>
-  <div id="display" class="box">
-    <table class="tiles-table">
-      <tr>
-        <td class='number'><p>2</p></td>
-        <td class='number'><p>4</p></td>
-        <td class='number'><p>8</p></td>
-        <td class='number'><p>16</p></td>
-        <td class='number'><p>32</p></td>
-        <td class='number'><p>64</p></td>
-        <td class='number'><p>128</p></td>
-        <td class='number'><p>256</p></td>
-        <td class='number'><p>512</p></td>
-        <td class='number'><p>1024</p></td>
-        <td class='number'><p>2048</p></td>
-        <td class='number'><p>super</p></td>
-        <td class='close'><a id="close" onclick="closeBox()" class="close"><strong>Close[X]</strong></a></td>
-      </tr>
-      <tr>
-        <td class='image'><img src="img/tube-2.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/coconuts-4.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/potato-8.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/hackon-16.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/cpw-32.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/pusheen-64.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/engineering-128.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/timbeaver-256.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/MIT-512.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/class-1024.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/IHTFP_red-2048.png" width=70px height=70px/></td>
-        <td class='image'><img src="img/IHTFP_gray-super.png" width=70px height=70px/></td>
-      </tr>
-    </table>   
-  </div>
+  <a class="hoverme">
+    <div id="display" class="box">
+      <table class="tiles-table">
+        <tr>
+          <td class='image'><img src="img/tube-2.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/coconuts-4.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/potato-8.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/hackon-16.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/cpw-32.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/pusheen-64.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/engineering-128.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/timbeaver-256.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/MIT-512.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/class-1024.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/IHTFP_red-2048.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/IHTFP_gray-super.png" width=70px height=70px/></td>
+          <td class='close'><a id="close" onclick="closeBox()" class="close"><strong>Close[X]</strong></a></td>    
+        </tr>
+      </table>
+    </div>   
+    <div id="display1" class="box1">
+      <table class="numbers-table">
+        <tr>
+          <td class='number'><p>2</p></td>
+          <td class='number'><p>4</p></td>
+          <td class='number'><p>8</p></td>
+          <td class='number'><p>16</p></td>
+          <td class='number'><p>32</p></td>
+          <td class='number'><p>64</p></td>
+          <td class='number'><p>128</p></td>
+          <td class='number'><p>256</p></td>
+          <td class='number'><p>512</p></td>
+          <td class='number'><p>1024</p></td>
+          <td class='number'><p>2048</p></td>
+          <td class='number'><p>super</p></td>
+        </tr>
+      </table>
+    </div>
+  </a>
 
   <div class="container">
     <div class="heading">
@@ -63,7 +69,7 @@
       <div class="game-message">
         <p></p>
         <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
+          <a class="keep-playing-button">Keep going</a>
           <a class="retry-button">Try again</a>
         </div>
       </div>
