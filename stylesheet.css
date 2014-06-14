@@ -45,6 +45,9 @@ a:hover {
 	margin: 0;
 	float: left; }
 
+.projects {
+	font-size: 15px; }
+
 #links {
 	clear: both; 
 	position: relative;
