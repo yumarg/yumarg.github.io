@@ -4,4 +4,5 @@ function displayBox() {
 }
 function closeBox() {
   document.getElementById("display").style.display = "none";
+  document.getElementById("display1").style.display = "none";
 }
