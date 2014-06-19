@@ -24,9 +24,9 @@ html, body {
   margin-bottom: 5px;
   padding: 5px 10px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
-  width: 250px; }
+  width: 320px; }
 .clickme:hover {
   color: #303030; }  
 
