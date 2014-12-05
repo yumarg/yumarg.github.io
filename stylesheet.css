@@ -43,7 +43,8 @@ a:hover {
 	clear: both;
 	position: relative;
 	margin: 0;
-	float: left; }
+	float: left; 
+  font-size: 20px;}
 
 .projects {
 	font-size: 18px; 
@@ -53,7 +54,8 @@ a:hover {
 	clear: both; 
 	position: relative;
 	margin: 0;
-	float: left; }
+	float: left; 
+	font-size: 16px;}
 
 hr {
   border-width: medium medium 1px;
@@ -67,12 +69,12 @@ hr {
   margin: 0; }
 
 #copyright {
-	display: block;
-	position: absolute;
-	top: auto;
-	left: auto;
-	bottom: 5px; 
-	right: 5px; }
+	position: relative;
+	font-size: 12px;
+	width: 160px;
+	margin-bottom: 5px;
+  margin-left: 1005px;}
+
 img {
 	width: 20px;
 	height: 20px; }
