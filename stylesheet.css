@@ -64,6 +64,20 @@ a.title:hover {
 	float: left; 
 	font-size: 15px; }
 
+#footer {
+	clear: both;
+	position: relative;
+	width: 100%;
+	margin-top: 3%;
+  margin-right: 86.5%; }
+#copyright {
+	font-size: 15px;
+	font-family: 'Roboto Condensed', sans-serif; }
+
+img {
+	width: 15px;
+	height: 15px; }
+
 hr {
   border-width: medium medium 1px;
   border-style: none none dotted;
@@ -83,16 +97,3 @@ hr.title {
 
 strong {
 	font-size: 18px; }
-
-#footer {
-	position: relative;
-	width: 100%;
-	margin-top: 3%;
-  margin-right: 86.5%; }
-#copyright {
-	font-size: 15px;
-	font-family: 'Roboto Condensed', sans-serif; }
-
-img {
-	width: 15px;
-	height: 15px; }
