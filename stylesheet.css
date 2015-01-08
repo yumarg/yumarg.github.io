@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two);
 @import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
 
 html, body {
 	font-family: 'Lato', sans-serif;
@@ -24,6 +25,44 @@ a:visited {
 a:hover {
 	color: #af49df; }
 
+#returntotop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #b667da;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+#returntotop div {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 13px;
+  top: 8px;
+  font-size: 23px;
+  font-family: 'Droid Sans Mono', ;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+#returntotop:hover {
+  background: #af49df; 
+  position: fixed; }
+#returntotop:hover div {
+  color: #fff;
+  top: 5px; }
+
 #content {
   margin: 0em 10em; }
 #title {
@@ -31,8 +70,6 @@ a:hover {
 	float: none; 
 	text-align: center; 
 	margin-bottom: 10px; }
-#title a:hover {
-	color: #66ccff; }
 .title-Margaret, .title-Yu {
 	font-size: 55px;
 	font-family: 'Shadows Into Light Two', cursive; }
@@ -77,6 +114,9 @@ a.title:hover {
 img {
 	width: 15px;
 	height: 15px; }
+
+div i {
+	color: #444; }
 
 hr {
   border-width: medium medium 1px;
