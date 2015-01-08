@@ -35,13 +35,15 @@ a:hover {
 #title a:hover {
 	color: #66ccff; }
 .title-Margaret, .title-Yu {
-	font-size: 52px;
-	font-weight: bold;
+	font-size: 55px;
 	font-family: 'Shadows Into Light Two', cursive; }
 .title-Margaret {
 	color: #af49df; }
 .title-Yu {
 	color: #b667da; }
+a.title:hover { 
+	font-size: 57px;
+  font-weight: bold; }
 
 #intro {
 	clear: both;
