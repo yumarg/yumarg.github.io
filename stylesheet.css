@@ -4,14 +4,14 @@
 
 html, body {
 	font-family: 'Lato', sans-serif;
-	margin: 0px 0px 0px 5px;
 	padding: 0;
 	height: 100%; 
-	width: 99.4%;
+	width: 100%;
 	position: relative; }
 	
 p {
 	font-size: 15px; 
+	margin: 0;
 	line-height: 1.4; }
 
 a {
@@ -25,8 +25,7 @@ a:hover {
 	color: #af49df; }
 
 #content {
-	left: 5px;
-	right: 5px; }
+  margin: 0em 10em; }
 #title {
 	position: relative; 
 	float: none; 
@@ -74,8 +73,8 @@ hr {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   border-image: none;
-  width: 99%;
-  margin: 0px; }
+  width: 100%;
+  margin: 1.5em 0em; }
 hr.title {
 	margin-top: 5px;
 	height:12px;
