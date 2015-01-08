@@ -1,17 +1,17 @@
 html, body {
-	font-family: Calibri;
+	font-family: 'Lato', sans-serif;
 	margin: 0px 0px 0px 5px;
 	padding: 0;
 	height: 100%; 
-	width: 99.5%;
+	width: 99.4%;
 	position: relative; }
 	
 p {
-	font-size: 20px; 
+	font-size: 15px; 
 	line-height: 1.3; }
 
 a {
-	font-size: 20px;
+	font-size: 15px;
 	color: #b667da; 
 	cursor: pointer; 
 	text-decoration: none; }
@@ -31,9 +31,9 @@ a:hover {
 #title a:hover {
 	color: #66ccff; }
 .title-Margaret, .title-Yu {
-	font-size: 48px;
+	font-size: 52px;
 	font-weight: bold;
-	font-family: Comic Sans MS, sans-serif; }
+	font-family: 'Shadows Into Light Two', cursive; }
 .title-Margaret {
 	color: #af49df; }
 .title-Yu {
@@ -48,7 +48,7 @@ a:hover {
   font-size: 20px;}
 
 .projects {
-	font-size: 18px; 
+	font-size: 15px; 
 	font-style: italic; }
 
 #links {
@@ -57,7 +57,7 @@ a:hover {
 	margin: 0;
   width: 100%;
 	float: left; 
-	font-size: 16px;}
+	font-size: 15px; }
 
 hr {
   border-width: medium medium 1px;
@@ -74,16 +74,17 @@ hr.title {
 	margin-top: 5px;
 	height:12px;
 	border: 0;
-	box-shadow: inset 0 12px 12px -12px #af49df;
-}
+	box-shadow: inset 0 12px 12px -12px #af49df; }
 
-#copyright {
+#footer {
 	position: relative;
-	font-size: 10px;
-	width: 14%;
+	width: 20%;
 	margin-bottom: 5px;
-  margin-right: 86.5%;}
+  margin-right: 86.5%; }
+#copyright {
+	font-size: 15px;
+	font-family: 'Roboto Condensed', sans-serif; }
 
 img {
-	width: 10%;
-	height: 10%; }
+	width: 8%;
+	height: 8%; }
