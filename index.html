@@ -3,33 +3,33 @@
 <head>
 	<meta charset="utf-8"/>
     <title>Margaret Yu</title>
-    <link href="stylesheet.css" rel="stylesheet" type="text/css">
-    <link href="myfavicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>    
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="myfavicon.ico" rel="shortcut icon" type="image/x-icon">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
 			$(window).scroll(function() {
 		    if ($(this).scrollTop() >= 30) {
-		        $('#returntotop').fadeIn(100);
+		        $('#returntotop').fadeIn(300);
 		    } else {
-		        $('#returntotop').fadeOut(100); }
+		        $('#returntotop').fadeOut(300); }
 			});
 			$('#returntotop').click(function() {
 			    $('body,html').animate({
 			        scrollTop : 0
-			    }, 500); 
+			    }, 2000); 
 			});
 		</script>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
-	<div id="content" style="height: 1500px;">
-		<a href="#title" id="returntotop" title="Return to top"><div>^</div></a>
+	<div id="content">
+		<a href="#title" id="returntotop" title="Return to top"><i class="icon-chevron-up"></i></a>
 		<div id="title">
-			<a href="http://yumarg.github.io" class="title">
+			<a href="#" class="title">
 				<span class="title-Margaret">Margaret </span><span class="title-Yu">Yu</span>
 			</a>
 			<hr class = "title">
