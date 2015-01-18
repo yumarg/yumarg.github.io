@@ -5,8 +5,21 @@ html, body {
 	width: 100%;
 	position: relative; }
 
-#content {
+#btn2 {
+  position: absolute;
+  top: 40%;
+  left: 48%;
+  width: 100px;
+  height: 100px;
+  padding: 0px;
+  margin: 0; }
+
+ #content {
+  position: absolute;  
   margin: 0em 10em; }
+
+.details {
+	font-size: 13px; }
 
 p {
 	font-size: 16px; 
@@ -66,6 +79,10 @@ a:hover {
 	float: none; 
 	text-align: center; 
 	margin-bottom: 10px; }
+.favicon {
+	float: left;
+	display: inline-block; 
+  margin-top: 10px; }
 .title-Margaret, .title-Yu {
 	font-size: 60px;
 	font-family: 'Shadows Into Light Two', cursive; }
@@ -133,3 +150,22 @@ hr.title {
 
 strong {
 	font-size: 22px; }
+
+.pulse {
+    -webkit-animation-name: pulsate;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite }
+
+@-webkit-keyframes pulsate {
+    0% {opacity: .15}
+    10% {opacity: .20}
+    20% {opacity: .40}
+    30% {opacity: .70}
+    40% {opacity: .90}
+    50% {opacity: 1.0}
+    60% {opacity: .90}
+    70% {opacity: .70}
+    80% {opacity: .40}
+    90% {opacity: .20}
+    100% {opacity: .15} }
