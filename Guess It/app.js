@@ -185,30 +185,54 @@ $(document).ready(function() {
 	    else {
 	    	return false
 	    }
-	  }		
-		else if ((e.which == 8 || e.which == 37)) {
-			if (this.value.length == 0 && this.id == 'input-4') {
-				$('#input-3').trigger('focus');
+	  }
+	  else if (e.which == 8) {
+	  	if (this.value.length == 1) {
+		  	this.value = '';	
+	  		return false
+	  	}
+	  	else {
+		  	if (this.id == 'input-4') {
+					$('#input-3').trigger('focus');
+				}
+				else if (this.id == 'input-3') {
+					$('#input-2').trigger('focus');
+				}
+				else if (this.id == 'input-2') {
+					$('#input-1').trigger('focus');
+				}
+			  return false
 			}
-			else if (this.value.length == 0 && this.id == 'input-3') {
+	  }
+		else if (e.which == 37) {
+			if (this.id == 'input-4') {
+				$('#input-4').blur(function() {document.getElementById('input-3').setSelectionRange(0, this.value.length);});
+				$('#input-3').trigger('focus');				
+			}
+			else if (this.id == 'input-3') {
+				$('input-3').blur(function() {document.getElementById('input-2').setSelectionRange(0, this.value.length);});
 				$('#input-2').trigger('focus');
 			}
-			else if (this.value.length == 0 && this.id == 'input-2') {
-				$('#input-1').trigger('focus');
+			else if (this.id == 'input-2') {
+				$('input-2').blur(function() {document.getElementById('input-1').setSelectionRange(0, this.value.length);});
+				$('#input-1').trigger('focus');		
 			}			
-			return true
+			return false
 		}
-		else if ((e.which == 9 || e.which == 39)) {
-			if (this.value.length == 1 && this.id == 'input-1') {
+		else if (e.which == 39) {
+			if (this.id == 'input-1') {
+				$('#input-1').blur(function() {document.getElementById('input-2').setSelectionRange(0, this.value.length);});
 				$('#input-2').trigger('focus');
 			}
-			else if (this.value.length == 1 && this.id == 'input-2') {
+			else if (this.id == 'input-2') {
+				$('#input-2').blur(function() {document.getElementById('input-3').setSelectionRange(0, this.value.length);});
 				$('#input-3').trigger('focus');
 			}
-			else if (this.value.length == 1 && this.id == 'input-3') {
+			else if (this.id == 'input-3') {
+				$('#input-3').blur(function() {document.getElementById('input-4').setSelectionRange(0, this.value.length);});
 				$('#input-4').trigger('focus');
 			}
-			return true
+			return false
 		}
 		else if ((key != 32 && !e.shiftKey && (!isNaN( String.fromCharCode(key) )))) {
 	  	return true
@@ -218,15 +242,18 @@ $(document).ready(function() {
 	  }
 	});
 
-	$('.guess').keyup(function() {
-		if (this.value.length == 1 && this.id == 'input-1') {
-			$('#input-2').trigger('focus');
-		}
-		else if (this.value.length == 1 && this.id == 'input-2') {
-			$('#input-3').trigger('focus');
-		}
-		else if (this.value.length == 1 && this.id == 'input-3') {
-			$('#input-4').trigger('focus');
+	$('.guess').keyup(function(e) {
+		var key = e.keyCode ? e.keyCode : e.which;
+		if ((key != 32 && !e.shiftKey && (!isNaN( String.fromCharCode(key) )))) {
+			if (this.value.length == 1 && this.id == 'input-1') {
+				$('#input-2').trigger('focus');
+			}
+			else if (this.value.length == 1 && this.id == 'input-2') {
+				$('#input-3').trigger('focus');
+			}
+			else if (this.value.length == 1 && this.id == 'input-3') {
+				$('#input-4').trigger('focus');
+			}
 		}
 	});
 });
