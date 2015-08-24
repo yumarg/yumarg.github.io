@@ -16,7 +16,7 @@ body {
   left: 45%;
   width: 100px;
   height: 100px;
-  padding: 0px;
+  padding: 0;
   margin: 0; 
 }
 
@@ -34,6 +34,25 @@ p {
 	background: #efefef;
 	border: none;
 	z-index: 1000;
+}
+
+.show-menu {
+	text-decoration: none;
+	color: #fff;
+	background: #b667da;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+	cursor: pointer;
+}
+input[type=checkbox]{
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type=checkbox]:checked ~ #navigation,
+input[type=checkbox]:checked ~ #list {
+    display: block;
 }
 
 #navigation {
@@ -75,6 +94,67 @@ p {
 	margin-top: 5px;
 }
 
+@media screen and (min-device-width: 680px) and (max-device-width: 1600px) {
+	#title img {
+		height: 80px; 
+		width: 80px;
+	}
+
+	#about img {
+		width: 450px;
+	}
+}
+
+@media only screen and (min-device-width: 320px) and (max-width : 680px) {
+	#enter-button {
+		top: 40%;
+		left: 40%;
+	}
+
+	#header {
+		background: #fff;
+		height: 120px;
+		z-index: 1000;
+	}
+
+	#title {
+		margin-top: -10px;
+		display: inline-block;
+	}
+	#title img {
+		position: relative;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+		width: 60px;
+		height: 60px;
+		margin: 0 auto;
+	}
+	.title-Margaret,
+	.title-Yu {
+		display: none;
+	}
+	#list {
+		position: relative;
+		margin-top: -10px;
+		display: inline-block;
+		margin-bottom: 150px;		
+	}
+	#list li {
+		position: relative;
+		display: inline-block;
+	}
+	#list li a {
+		font-size: 18px;
+	}
+	#list li a:hover {
+		font-weight: bold;
+	}
+	.show-menu {
+		display:block;
+	}
+}
+
 #intro,
 #about,
 #projects,
@@ -99,7 +179,7 @@ p {
 
 #about img {
 	display: block;
-	max-width: 450px;
+	max-width: 80%;
 	margin: 0 auto;
 }
 
@@ -166,10 +246,10 @@ p {
 	border-radius: 15px;
 }
 
-#returntotop {
+.returntotop {
   position: fixed;
   bottom: 20px;
-  right: 8em;
+  right: 10px;
   background: #b667da;
   width: 45px;
   height: 45px;
@@ -183,7 +263,7 @@ p {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
-#returntotop i {
+.returntotop i {
   color: #fff;
   margin: 0;
   position: relative;
@@ -195,16 +275,16 @@ p {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
-#returntotop:hover {
+.returntotop:hover {
   background: #af49df; 
   position: fixed; }
-#returntotop:hover i {
+.returntotop:hover i {
   color: #fff;
   top: 5px; }
 
 .profile {
 	position: relative;
-	padding: 10px;
+	padding: 5px;
 	text-align: center;
 }
 .profile-container {
@@ -215,7 +295,6 @@ p {
 .profile-container a {
 	position: relative;
 	text-align: center;
-	width: 100%;
 	margin: auto auto;
 }
 .profile-container img,
