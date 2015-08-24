@@ -1,91 +1,342 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-	<meta charset='utf-8'/>
-		<title>Margaret Yu</title>
-    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'/>    
-    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'/>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'/>
-    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css' rel='stylesheet' type='text/css'/>
-    <link href='stylesheet.css' rel='stylesheet' type='text/css'/>
-		<link rel='icon' href='myfavicon.ico' type='image/x-icon'/>
-		<link rel='shortcut icon' href='http://yumarg.github.io/myfavicon.ico'/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal website of Margaret Yu. About, Projects, Links to other profiles">
 
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-    <script src='js/scrollbutton.js'></script>    
-  </head>
+    <title>Margaret Yu</title>
+    <link href="http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet" type="text/css"/>    
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css"/>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/hint.css/1.3.2/hint.min.css">
+    <link href="stylesheet.css" rel="stylesheet"/>
+    <link rel="icon" href="http://yumarg.github.io/myfavicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="http://yumarg.github.io/myfavicon.ico"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery.typer.js"></script>
+</head>
 
-  <body>
-    <script>
-      $(document).ready(function () {
-        $("#content").hide();
-        $("#btn2").click(function () {
-            $(this).removeClass('pulse');
-            $(this).hide();
-            $("#content").show();
-        });
-      })
-    </script>    
-    <a href="#" title="Enter site">
-      <img src="sm-logo.png" id="btn2" class="button pulse"/>
-    </a>
-    <div id="content">
-      <a href="#title" style="z-index: 1000" id="returntotop" title="Return to top"><i class="fa fa-chevron-up"></i></a>
-      <div id="title">
-        <a href='#' class="favicon"><img src="sm-logo.png" style="height: 65px; width: 65px;"></a>
-        <a href="#" class="title">
-          <span class="title-Margaret">Margaret </span><span class="title-Yu">Yu</span>
+<body class="container">    
+
+    <div id="enter">
+        <a href="#" title="Enter site">
+            <img src="sm-logo.png" id="enter-button" class="button pulse"/>
         </a>
-        <hr class = "title">
-      </div>
-      <div id="intro">
-        <p>
-          <strong>Hello there!</strong><br/><br/>
-          My name is Margaret Yu, and I am a Class of 2018 student at Massachusetts Institute of Technology intending to major in Computer Science and Engineering. <br/>
-          My interests include, but are not limited to, data visualization, creative coding, user interface design, and web development.<br/>
-          Here, you'll find a collection of my <a href="#completed">completed works</a> as well as my <a href="#WIPs">works-in-progress (WIPs)</a>. 
-        </p>
-        <hr>
-      </div>
-      <div id="links">
-        <p id="completed">Here is a list of my completed works: </p>
-        <p class="projects">
-          <a href="http://yumarg.github.io/Guess It" target="_blank" title="Play Guess It"> Guess It</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="details">a number sequence guessing game</span><br/>
-          <a href="http://opendatadiscourse.com" target="_blank" title="Go to Open Data Discourse">Open Data Discourse</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="details">website for a student-led initiative to connect citizens to open data on public portals for the purpose of improving public policy</span><br/>
-          <a href="http://yumarg.github.io/MIT2048" target="_blank" title="Play MIT2048"> MIT2048</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="details">a MIT-Class-of-2018 theme inspired version of 2048</span>
-        </p> 
-        <hr>
-        <p id="WIPs">View my activity on: </p>
-        <p class="projects"><a href="https://github.com/yumarg/" target="_blank" title="Go to my GitHub site">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="details">yumarg's WIPs</span><br/>
-        <a href="http://www.openprocessing.org/user/44708" target="_blank" title="Go to my Processing portfolio">Open Processing</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="details">sketches in the Processing programming language</span></p>
-        <hr>
-        <p>Check back for updates!</p>
-        <hr>
-        <p> You may also find these links interesting:
-          <ul>
-            <li> <a href="http://fromthemuseinme.wordpress.com" target="_blank" title="Go to my Wordpress website + blog">My Wordpress Website + From the Muse in Me blog</a></li>
-            <li> <a href="http://web.mit.edu/margyu/www/" target="_blank" title="Go to my MIT profile">My profile on the MIT website</a></li>
-            <li> <a href="http://startaneweveryweek.tumblr.com" target="_blank" title="Go to my Start Anew Every Week Tumblr blog">Start Anew Every Week (a Tumblr blog)</a></li>
-          </ul>
-        </p>
-      </div>
-      <div id="footer"> 
-        <p id="copyright">
-          &copy; Margaret Yu 
-          <script type="text/javascript">
-            var cur = 2014; 
-            var year = new Date(); 
-            if(cur == year.getFullYear()) {
-              year = year.getFullYear(); 
-            } else {
-              year = cur + ' - ' + year.getFullYear(); 
-              document.write(year);
+    </div>
+
+    <nav id="header" class="navbar navbar-default navbar-fixed-top topnav">
+
+        <div class="container">
+
+            <div class="collapse navbar-collapse" id="navigation">
+
+                <a href="#" id="title" title="Go to home"><img class="home navbar-brand" src="sm-logo.png" style="height: 80px; width: 80px;"><span class="title-Margaret">Margaret </span><span class="title-Yu">Yu</span></a>
+
+                <ul id="list" class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="about-button" title="Go to About">About</a></li>
+                    <li><a href="#" id="projects-button" title="Go to Projects">Projects</a></li>
+                    <li><a href="#" id="contact-button" title="Contact">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div id="intro">
+        <div class="container">
+
+            <div class="row content">
+                <div class="col-lg-12">
+                    <p>
+                        Hello there! My name is <span style="color: #b667da">Margaret</span>.
+                    </p>
+                    <br><br><br>
+                    <p>
+                        I am <span class="typers" data-typer-targets="a student,an INFP,a scientific artist,a musician,a twin, a thinker,an aesthete,a health nut,a nerdfighter,an optimist"></span> <br>
+                        who is passionate about <span class="typers" data-typer-targets="data science,UI/UX,web development,machine learning,self-improvement,design,food and nutrition,creative coding,education,STEAM"></span> <br>
+                        and loves <span class="typers" data-typer-targets="photography,blogging,basketball,choral music,Pinterest,pastel colors,table tennis,jamming sessions,string art,nature"></span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+
+            <div class="row content">
+                <div class="col-lg-12">
+                    <p>
+                        I am currently a sophomore studying Computer Science and Engineering (among many other things) at Massachusetts Institute of Technology in Cambridge, MA. I am originally from Monterey Park, CA.
+                    </p>
+
+                    <br><br>
+
+                    <img src="me.JPG"/>
+
+                    <p style="font-size: 16px; margin-bottom: -20px"><i>Live life to the fullest.</i></p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="projects">
+        <div class="container">
+
+            <a href="#projects" style="z-index: 1000" id="returntotop" title="Return to top"><i class="fa fa-chevron-up"></i></a>            
+
+            <div class="row content">
+                <div class="col-lg-12">
+                    <p>Here is a collection of my completed works and my WIPs (works-in-progress):</p>
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="completed" class="col-lg-12">
+                    <p><strong>C O M P L E T E D</strong></p>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="wips" class="col-lg-12">
+                    <p><strong>W I P s (works-in-progress)</strong></p>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+    </div>  
+
+    <div id="contact">
+        <div class="container">      
+
+            <div class="row content">
+                <div id="profiles" class="col-lg-12">
+                    <p>Check out my other profiles elsewhere on the web:</p>
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="row content">
+                <div class="col-lg-12">
+                    <p>Email me at <span class="obfuscate">ude.tim@uygram</span> if you'd like to contact me.
+                        <br> <i style="font-size: 16px"><strong>*</strong>I've obfuscated my email address so that when it is copied, the address is flipped.</i>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="footer"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-log-12">
+
+                    <p id="copyright">
+                      &copy; 
+                      <script type="text/javascript">
+                        var year = new Date(); 
+                          year = year.getFullYear(); 
+                          document.write(year);
+                      </script> Margaret Yu
+                      <img src="sm-logo.png">
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>  
+
+    <script>
+    $(document).ready(function() {
+        $("#header").hide();
+        $("#intro").hide();
+        $("#about").hide();
+        $("#projects").hide();
+        $("#contact").hide();
+        $("#footer").hide();
+        $("#enter-button").click(function() {
+            $(this).removeClass("pulse");
+            $(this).hide();
+            $("#header").show("slow", function() {
+                $("#intro").show("slow");
+                $("#footer").show("slow");
+            });
+        });
+        $("#title").click(function() {
+            $("#about").hide();
+            $("#projects").hide();     
+            $("#contact").hide();       
+            $("#intro").show("slow");
+            $("#footer").show("slow");
+        });
+        $("#about-button").click(function() {
+            $("#intro").hide();
+            $("#projects").hide();
+            $("#contact").hide();
+            $("#about").show("slow");
+            $("#footer").show("slow");
+        });
+        $("#projects-button").click(function() {
+            $("#intro").hide();
+            $("#about").hide();
+            $("#contact").hide();
+            $("#projects").show("slow");
+            $("#footer").show("slow");
+        });
+        $("#contact-button").click(function() {
+            $("#intro").hide();
+            $("#about").hide();
+            $("#projects").hide();
+            $("#contact").show("slow");
+            $("#footer").show("slow");            
+        });
+
+        $('[data-typer-targets]').typer();  
+
+        var completed = [
+            {
+                "name": "Guess It",
+                "url": "http://margaretyu.me/Guess It",
+                "date": "June 2015",
+                "tools": "HTML, CSS, JavaScript, jQuery, Git, GitHub"
+            },        
+            {
+                "name": "MIT2048",
+                "url": "http://margaretyu.me/MIT2048",
+                "date": "June 2014",
+                "tools": "HTML, CSS, JavaScript, jQuery, Git, GitHub"
             }
-          </script>
-          <img src="sm-logo.png">
-        </p>
-      </div>
-    </div>  	
-  </body>
+        ];
+
+        var wips = [
+            {
+                "name": "Glance",
+                "url": "#",
+                "date": "July 2015 to Present",
+                "tools": "HTML, CSS, JavaScript, jQuery, Leaflet.js, Git, GitHub"
+            },        
+            {
+                "name": "Learning Media",
+                "url": "#",
+                "date": "Jan 2015 to Present",
+                "tools": "HTML, CSS, Bootstrap, JavaScript, jQuery, D3.js, Git, GitHub"
+            }
+        ];
+
+        var profiles = [
+            {
+                "name": "MIT",
+                "url": "http://web.mit.edu/margyu/www/",
+                "icontype": "url",
+                "icon": "MIT-logo.png",
+                "tooltip": "See my profile on the MIT website",
+                "color": "ff0000"
+            },        
+            {
+                "name": "GitHub",
+                "url": "https://github.com/yumarg",
+                "icontype": "fontawesome",
+                "icon": "fa fa-github fa-5x",
+                "tooltip": "See my projects on GitHub",
+                "color": "#000"
+            },
+            {
+                "name": "Wordpress",
+                "url": "https://fromthemuseinme.wordpress.com",
+                "icontype": "fontawesome",
+                "icon": "fa fa-wordpress fa-5x",
+                "tooltip": "See my Wordpress website + blog",
+                "color": "#21759b"
+            },
+            {
+                "name": "Pinterest",
+                "url": "https://pinterest.com/yumarg",
+                "icontype": "fontawesome",
+                "icon": "fa fa-pinterest fa-5x",
+                "tooltip": "See my saved pins on Pinterest",
+                "color": "#bd081c"
+            },
+            {
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/in/margyu",
+                "icontype": "url",
+                "icon": "LinkedIn-logo.png",
+                "tooltip": "See my profile on LinkedIn",
+                "color": "#0077b5"
+            }
+        ];
+
+        function showTools(tools) {
+            var add = "";
+            tools = tools.split(',');
+            $.each(tools, function(toolIndex, tool) {
+                add += "<div class='tool'>"+tool+"</div>";
+            });
+            return add;
+        }
+
+        function makeProjectRows(projects, type) {
+            var projectAdd = "";
+            $.each(projects, function(projectsIndex, project) {
+                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><a class='project-name' href='"+project.url+"' target='_blank' title='"+project.name+"'>"+project.name+"</a><div class='project-tools clearfix'>"+showTools(project.tools)+"</div></div></div></div>";
+            });
+            if (type == "completed") {
+                $("#projects .container #completed").append("<div class='row'>"+projectAdd+"</div><br><br><br>");
+            }
+            else if (type == "wips") {
+                $("#projects .container #wips").append("<div class='row'>"+projectAdd+"</div><br><br><br>");
+            }
+        }
+
+        function makeImg(icontype, icon, color) {
+            if (icontype == "url") {
+                return "<img style='color: "+color+"' src='"+icon+"'/>";
+            }
+            else if (icontype == "fontawesome") {
+                return "<i style='color: "+color+"' class='"+icon+"'></i>";
+            }
+        }
+
+        function makeProfileRows(profiles) {
+            var profileAdd = "";
+            $.each(profiles, function(profilesIndex, profile) {
+                profileAdd += "<div class='profile col-md-2 col-sm-2 col-xs-3 container'><a href='"+profile.url+"' target='_blank' title='"+profile.name+"' class='profile-container hint--bottom hint--bounce' data-hint='"+profile.tooltip+"'>"+makeImg(profile.icontype, profile.icon, profile.color)+"</a></div>";
+            });
+            $("#contact .container #profiles").append("<div class='row'><div class='col-md-12'>"+profileAdd+"</div></div>");
+        }
+
+        makeProjectRows(completed, "completed");
+        makeProjectRows(wips, "wips");
+
+        makeProfileRows(profiles);
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 50) {
+                $('#returntotop').fadeIn(300);
+            } else {
+                $('#returntotop').fadeOut(300); }
+        });
+        $('#returntotop').click(function() {
+          $('body,html').animate({
+            scrollTop : 0
+          }, 1000); 
+        });
+    });
+    
+    </script>     
+
+</body>
 </html>
