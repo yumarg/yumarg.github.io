@@ -20,6 +20,7 @@
     <link rel="shortcut icon" href="http://yumarg.github.io/myfavicon.ico"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/jquery.typer.js"></script>
+    <script src="js/scrollbutton.js"></script>
 </head>
 
 <body class="container">    
@@ -322,18 +323,6 @@
         makeProjectRows(wips, "wips");
 
         makeProfileRows(profiles);
-
-        $(window).scroll(function() {
-            if ($(this).scrollTop() >= 50) {
-                $('#returntotop').fadeIn(300);
-            } else {
-                $('#returntotop').fadeOut(300); }
-        });
-        $('#returntotop').click(function() {
-          $('body,html').animate({
-            scrollTop : 0
-          }, 1000); 
-        });
     });
     
     </script>     
