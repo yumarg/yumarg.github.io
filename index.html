@@ -25,7 +25,7 @@
 
 <body class="container clearfix">    
 
-    <div id="enter">
+    <div id="enter" style="text-align: center">
         <a href="#" title="Enter site">
             <img src="sm-logo.png" id="enter-button" class="button pulse"/>
         </a>
@@ -180,10 +180,20 @@
         $("#enter-button").click(function() {
             $(this).removeClass("pulse");
             $(this).hide();
+            $("#press").hide();
             $("#header").show("slow", function() {
                 $("#intro").show("slow");
                 $("#footer").show("slow");
             });
+        });
+        $("#press").click(function() {
+            $(this).hide();
+            $("#enter-button").removeClass("pulse");
+            $("#enter-button").hide();
+            $("#header").show("slow", function() {
+                $("#intro").show("slow");
+                $("#footer").show("slow");
+            });            
         });
         $("#title").click(function() {
             $(".show-menu").prop("checked", false);
@@ -238,13 +248,13 @@
         var wips = [
             {
                 "name": "Glance",
-                "url": "#",
+                "url": "http://viral.media.mit.edu/projects/glance/",
                 "date": "July 2015 to Present",
                 "tools": "HTML, CSS, JavaScript, jQuery, Leaflet.js, Git, GitHub"
             },        
             {
                 "name": "Learning Media",
-                "url": "#",
+                "url": "http://viral.media.mit.edu/projects/learning_media/",
                 "date": "Jan 2015 to Present",
                 "tools": "HTML, CSS, Bootstrap, JavaScript, jQuery, D3.js, Git, GitHub"
             }
@@ -305,7 +315,7 @@
         function makeProjectRows(projects, type) {
             var projectAdd = "";
             $.each(projects, function(projectsIndex, project) {
-                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><a class='project-name' href='"+project.url+"' target='_blank' title='"+project.name+"'>"+project.name+"</a><div class='project-tools clearfix'>"+showTools(project.tools)+"</div></div></div></div>";
+                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><a class='project-container' href='"+project.url+"' target='_blank' title='"+project.name+"'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><p class='project-name'>"+project.name+"</p><div class='project-tools clearfix'>"+showTools(project.tools)+"</div></div></div></a></div>";
             });
             if (type == "completed") {
                 $("#projects .container #completed").append("<div class='row'>"+projectAdd+"</div><br><br><br>");
