@@ -171,6 +171,7 @@
 
     <script>
     $(document).ready(function() {
+        enter = setTimeout(function() {$("#enter-button").trigger("click")}, 3000);
         $("#header").hide();
         $("#intro").hide();
         $("#about").hide();
@@ -178,6 +179,7 @@
         $("#contact").hide();
         $("#footer").hide();
         $("#enter-button").click(function() {
+            clearTimeout(enter);
             $(this).removeClass("pulse");
             $(this).hide();
             $("#press").hide();
