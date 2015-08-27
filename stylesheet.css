@@ -237,14 +237,29 @@ input[type=checkbox]:checked ~ #list {
 	background: #692b85;
 	color: #fff;
 }
-.project-container:hover .project-cover {
-	background: #fff;
-	border: solid #b667da;
+.project-description {
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	border: solid #692b85;
 	border-radius: 15px;
+	background: #fff;	
+	z-index: 1;	
 }
-.project-container:hover .project-name {
-	font-weight: bold;
-	margin-left: 5px;
+.project-desc {
+	color: #341542;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	font-size: 12px;
+}
+.project-container:hover .project-cover {
+	opacity: 0.7;
+}
+.project-container:hover .project-description {
+	opacity: 0.8;
 }
 
 .returntotop {

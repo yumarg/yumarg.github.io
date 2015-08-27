@@ -237,13 +237,22 @@
                 "name": "Guess It",
                 "url": "http://margaretyu.me/Guess It",
                 "date": "June 2015",
-                "tools": "HTML, CSS, JavaScript, jQuery, Git, GitHub"
-            },        
+                "tools": "HTML, CSS, JavaScript, jQuery, Git, GitHub",
+                "description": "designed and wrote code for a number sequence guessing game"
+            },      
+            {
+                "name": "College Kickstart",
+                "url": "https://www.college-kickstart.com/",
+                "date": "Jan 2015",
+                "tools": "HTML, CSS, UI Kit, Google Visualization API, JavaScript, jQuery, Joomla!, PHP, MySQL",
+                "description": "created data visualizations of Beta Testing results"
+            },
             {
                 "name": "MIT2048",
                 "url": "http://margaretyu.me/MIT2048",
                 "date": "June 2014",
-                "tools": "HTML, CSS, JavaScript, jQuery, Git, GitHub"
+                "tools": "HTML, CSS, JavaScript, jQuery, Git, GitHub",
+                "description": "designed an MIT-Class-of-2018-themed 2048 game using Gabriele Cirulli's original 2048 game as reference"
             }
         ];
 
@@ -252,13 +261,15 @@
                 "name": "Glance",
                 "url": "http://viral.media.mit.edu/projects/glance/",
                 "date": "July 2015 to Present",
-                "tools": "HTML, CSS, JavaScript, jQuery, Leaflet.js, Git, GitHub"
+                "tools": "HTML, CSS, JavaScript, jQuery, Leaflet.js, Git, GitHub",
+                "description": "designed and built a map visualization of viewing geographical or topical relationships between news articles"
             },        
             {
                 "name": "Learning Media",
                 "url": "http://viral.media.mit.edu/projects/learning_media/",
                 "date": "Jan 2015 to Present",
-                "tools": "HTML, CSS, Bootstrap, JavaScript, jQuery, D3.js, Git, GitHub"
+                "tools": "HTML, CSS, Bootstrap, JavaScript, jQuery, D3.js, Git, GitHub",
+                "description": "designed a dashboard for a web platform that enables users to customize how they experience different forms of media"
             }
         ];
 
@@ -317,7 +328,7 @@
         function makeProjectRows(projects, type) {
             var projectAdd = "";
             $.each(projects, function(projectsIndex, project) {
-                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><a class='project-container' href='"+project.url+"' target='_blank' title='"+project.name+"'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><p class='project-name'>"+project.name+"</p><div class='project-tools clearfix'>"+showTools(project.tools)+"</div></div></div></a></div>";
+                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><a class='project-container' href='"+project.url+"' target='_blank' title='"+project.name+"'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><p class='project-name'>"+project.name+"</p><div class='project-tools clearfix'>"+showTools(project.tools)+"</div></div><div class='project-description'><p class='project-desc'><i>"+project.description+"</i></p></div></div></a></div>";
             });
             if (type == "completed") {
                 $("#projects .container #completed").append("<div class='row'>"+projectAdd+"</div><br><br><br>");
