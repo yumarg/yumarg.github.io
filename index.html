@@ -171,13 +171,13 @@
 
     <script>
     $(document).ready(function() {
-        enter = setTimeout(function() {$("#enter-button").trigger("click")}, 3000);
         $("#header").hide();
         $("#intro").hide();
         $("#about").hide();
         $("#projects").hide();
         $("#contact").hide();
-        $("#footer").hide();
+        $("#footer").hide();        
+        enter = setTimeout(function() {$("#enter-button").trigger("click")}, 5000);
         $("#enter-button").click(function() {
             clearTimeout(enter);
             $(this).removeClass("pulse");
