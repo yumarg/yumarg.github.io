@@ -154,11 +154,6 @@ p {
 	margin: 0 auto;
 }
 
-#projects p,
-#contact p {
-	font-size: 20px;
-}
-
 #projects a,
 #projects a:visited {
 	color: #692b85;
@@ -185,13 +180,15 @@ p {
 }
 .project-date {
 	position: absolute;
+	font-size: 18px;
 	top: 5px;
 	right: 10px;
 }
 .project-name {
 	position: absolute;
 	margin-top: 25%;
-	font-size: 30px;
+	font-size: 24px;
+	font-weight: bold;
 }
 .project-tools {
 	position: absolute;
@@ -223,14 +220,15 @@ p {
 	color: #341542;
 	position: absolute;
 	left: 5px;
-	top: 5px;
-	font-size: 12px;
+	bottom: 5px;
+	font-size: 18px;
+	font-weight: 600;
 }
 .project-container:hover .project-cover {
-	opacity: 0.7;
+	opacity: 0.8;
 }
 .project-container:hover .project-description {
-	opacity: 0.8;
+	opacity: 0.9;
 }
 
 .returntotop {
@@ -268,6 +266,10 @@ p {
 .returntotop:hover i {
   color: #fff;
   top: 5px; }
+
+#contact p {
+	font-size: 20px;
+}
 
 .profile {
 	position: relative;
