@@ -1,0 +1,175 @@
+* {
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Droid Sans Mono', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+#about {
+	position: absolute;
+	width: 340px;
+	z-index: 1000;
+}
+
+#info {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#info p:hover {
+	cursor: pointer;
+}
+
+#info-about:hover {
+	color: #1fa2d6;
+}
+
+#show-about {
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+#show-about p {
+	font-size: 11px;
+}
+
+
+
+#show-about a:visited,
+#show-about a:hover,
+#show-about a:link {
+	text-decoration: none;
+}
+
+#close:hover {
+	cursor: pointer;
+	color: #1fa2d6;
+}
+
+#game {
+	position: absolute;
+}
+
+#message {
+	position: absolute;
+}
+
+#message p {
+  margin: 20% auto;
+	text-align: center;
+}
+
+#message p span:hover {
+	cursor: pointer;
+}
+
+#title {
+	margin: 0 auto;
+}
+
+#title p {
+	text-align: center;
+	font-size: 80px;
+	color: #1fa2d6;
+	font-weight: bold;
+}
+
+#guess-box {
+	margin: 0 auto;
+}
+
+#guesses {
+	margin: 10px auto 0 auto;
+	width: 525px;
+	height: 125px;
+	list-style: none;
+	white-space: nowrap;
+}
+
+#guesses li {
+	float: left;
+	display: inline;
+	text-align: center;
+	margin: 0 5px;
+}
+
+#guess:focus {
+  outline: none;
+  box-shadow: 0 0 7px rgba(31, 162, 214, 0.7); 
+  border-color: rgba(31, 162, 214, 0.3); 	
+}
+
+input[type=text] {
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  font-family: 'Droid Sans Mono', sans-serif;
+  color: #1fa2d6;
+}
+
+#game-buttons {
+	width: 215px;
+	margin: 10px auto 0 auto;
+	text-align: center;
+}
+
+#game-buttons button {
+	display: inline;
+	text-align: center;
+	height: 35px;
+	font-family: 'Droid Sans Mono', sans-serif;
+	font-size: 16px;
+	color: #1fa2d6;	
+}
+
+#game-buttons button:hover,
+#numberset li {
+	cursor: pointer;
+}
+
+#go-guess {
+	width: 100px;
+}
+
+#new-game {
+	margin-left: 5px;
+	width: 100px;
+}
+
+#results {
+	width: 560px;
+	text-align: center;
+	vertical-align: middle;
+	margin: 30px auto 0 auto;
+	border-spacing: 0;
+}
+
+#results > * {
+	font-family: 'Droid Sans Mono', sans-serif;
+}
+
+#results th,
+#results td {
+	font-size: 18px;
+}
