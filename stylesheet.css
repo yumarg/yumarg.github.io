@@ -154,6 +154,11 @@ p {
 	margin: 0 auto;
 }
 
+#completed > p,
+#wips > p {
+	font-size: 24px;
+}
+
 #projects a,
 #projects a:visited {
 	color: #692b85;
@@ -222,10 +227,11 @@ p {
 	left: 5px;
 	bottom: 5px;
 	font-size: 18px;
+	line-height: 20px;
 	font-weight: 600;
 }
 .project-container:hover .project-cover {
-	opacity: 0.8;
+	opacity: 0.7;
 }
 .project-container:hover .project-description {
 	opacity: 0.9;
@@ -291,6 +297,7 @@ p {
 }
 .profile-container:hover img,
 .profile-container:hover i {
+	opacity: 0.4;
 	transform: translateY(-8px);
 	-webkit-transform: translateY(-8px);
 	-moz-transform: translateY(-8px);

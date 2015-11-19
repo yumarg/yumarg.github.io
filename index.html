@@ -84,7 +84,7 @@
 
                     <br><br>
 
-                    <img src="me.JPG"/>
+                    <img src="MY.JPG"/>
 
                     <p style="font-size: 16px; margin-bottom: -20px"><i>Live life to the fullest.</i></p>
 
@@ -101,7 +101,7 @@
 
             <div class="row content">
                 <div class="col-lg-12">
-                    <p>Here is a collection of my completed works and my WIPs (works-in-progress):</p>
+                    <p style="font-size: 24px">Here is a collection of my completed works and my WIPs (works-in-progress):</p>
                     <br><br>
                 </div>
             </div>
@@ -210,8 +210,24 @@
 
         var completed = [
             {
+                "name": "Glance",
+                "url": "http://viral.media.mit.edu/projects/glance/",
+                "date": "July 2015 to Aug 2015",
+                "tools": "HTML, CSS, JavaScript, jQuery, Leaflet.js, Git, GitHub",
+                "description": "designed and built a map visualization of exploring geographical or topical relationships between news articles",
+                "picture": "glance.PNG"
+            },        
+            {
+                "name": "Learning Media",
+                "url": "http://viral.media.mit.edu/projects/learning_media/",
+                "date": "Jan 2015 to June 2015",
+                "tools": "HTML, CSS, Bootstrap, JavaScript, jQuery, D3.js, Git, GitHub",
+                "description": "designed a dashboard for a web platform that enables users to customize how they experience different forms of media",
+                "picture": "learningmedia.gif"
+            },       
+            {
                 "name": "Guess It",
-                "url": "http://margaretyu.me/Guess It",
+                "url": "http://margaretyu.me/GuessIt",
                 "date": "June 2015",
                 "tools": "HTML, CSS, JavaScript, jQuery, Git, GitHub",
                 "description": "designed and wrote code for a number sequence guessing game",
@@ -232,25 +248,25 @@
                 "tools": "HTML, CSS, JavaScript, jQuery, Git, GitHub",
                 "description": "designed an MIT-Class-of-2018-themed 2048 game",
                 "picture": "MIT2048.PNG"
-            }
+            }            
         ];
 
         var wips = [
             {
-                "name": "Glance",
-                "url": "http://viral.media.mit.edu/projects/glance/",
-                "date": "July 2015 to Present",
-                "tools": "HTML, CSS, JavaScript, jQuery, Leaflet.js, Git, GitHub",
-                "description": "designed and built a map visualization of exploring geographical or topical relationships between news articles",
-                "picture": "glance.PNG"
-            },        
+                "name": "DoneGood",
+                "url": "http://donegood.co",
+                "date": "Oct 2015 to Present",
+                "tools": "HTML, CSS, JavaScript, Parse API, Asana",
+                "description": "redesigned and improved the website for DoneGood, a startup that connects consumers with businesses that share their values",
+                "picture": "donegood.PNG"
+            },
             {
-                "name": "Learning Media",
-                "url": "http://viral.media.mit.edu/projects/learning_media/",
-                "date": "Jan 2015 to Present",
-                "tools": "HTML, CSS, Bootstrap, JavaScript, jQuery, D3.js, Git, GitHub",
-                "description": "designed a dashboard for a web platform that enables users to customize how they experience different forms of media",
-                "picture": "learningmedia.gif"
+                "name": "Big Data Analytics for Andorra",
+                "url": "#",
+                "date": "Sept 2015 to Present",
+                "tools": "HTML, CSS, JavaScript, Leaflet.js, R, Processing",
+                "description": "performed data analysis and created data visualizations to understand Andorra's dynamics on tourism and human mobility",
+                "picture": "andorra.PNG"
             }
         ];
 
@@ -309,7 +325,7 @@
         function makeProjectRows(projects, type) {
             var projectAdd = "";
             $.each(projects, function(projectsIndex, project) {
-                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><a class='project-container' href='"+project.url+"' target='_blank' title='"+project.name+"'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><p class='project-name'>"+project.name+"</p><div class='project-tools clearfix'>"+showTools(project.tools)+"</div></div><div style='background-image: url("+project.picture+"); background-size: 95%; background-position: center top; background-repeat: no-repeat' class='project-description'><p class='project-desc'><i>"+project.description+"</i></p></div></div></a></div>";
+                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><a class='project-container' href='"+project.url+"' target='_blank' title='"+project.name+"'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><p class='project-name'>"+project.name+"</p><div class='project-tools clearfix'>"+showTools(project.tools)+"</div></div><div style='background-image: url("+project.picture+"); background-size: 95%; background-position: center top; background-repeat: no-repeat' class='project-description'><p class='project-desc'>"+project.description+"</p></div></div></a></div>";
             });
             if (type == "completed") {
                 $("#projects .container #completed").append("<div class='row'>"+projectAdd+"</div><br><br><br>");
