@@ -154,17 +154,14 @@ function Pulse() {
 function showResults() {
 	result = "<tr class='result'><td class='pulse'>"+numGuesses.toString()+"</td><td class='pulse'>"+userguesses[numGuesses-1]+"</td><td class='pulse'>"+evaluations[numGuesses-1]+"</td></tr>";
 	$("#results tbody").append(result);
-	setInterval(Pulse(), 2000)
-  // setInterval(function() {
-  //   $(".pulse").css("display") = ($(".pulse").css("display") == 'none' ? '' : 'none');
- 	// }, 2000)	
+	setInterval(Pulse(), 2000);
 	if (showUser == "4A") {
 		setTimeout(function(){gameWon();}, 3000);
 	}		
 }
 
 $(document).ready(function() {
-	if ($("#message").	css("display") != "none") {
+	if ($("#message").css("display") != "none") {
 		$("#message").click(startGame());
 	}
 
