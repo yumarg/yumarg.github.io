@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Club Placement App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+	<link href="main.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type='text/javascript' src='app.js'></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<h1 class="text-center">Club Placement App</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">
+				<p class="text-center">Upload csv file of clubs/organizations:</p>
+				<input type="file" id="file-name-orgs">
+			</div>
+			<div class="col-xs-3">
+				<p class="text-center">Upload csv file of info for existing students:</p>
+				<input type="file" id="file-name-existing">
+			</div>
+			<div class="col-xs-3">
+				<p class="text-center">Upload csv file of info for new students:</p>
+				<input type="file" id="file-name-new">
+			</div>
+			<div class="col-xs-3">
+				<button id="match" type="submit" class="btn btn-info">Match</button>
+				<p>Double click to Match! Results may take a few seconds to load.</p>
+			</div>
+		</div>
+		<div class="row" id="match-results">
+			<h1 class="text-left">Match results:</h1>
+		</div>
+		<div class="row">
+			<div class="col-xs-9">
+				<table id="match-table" class="table table-hover table-condensed">
+					<thead>
+						<tr>
+							<td>New Student Name</td>
+							<td>Suggested Clubs</td>
+							<td>Match Percentage</td>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-3">
+				<button id="clubs" type="button" class="btn btn-primary" data-toggle="modal" data-target="#clubsModal">Clubs</button>
+				<div class="modal fade" id="clubsModal" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title">Clubs</h4>
+							</div>
+							<div class="modal-body">
+								<table id="clubs-table" class="table table-condensed table-hover">
+									<thead>
+										<tr>
+											<td>Club Name</td>
+											<td>Students</td>
+											<td>Prominent Traits</td>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button id="students" type="button" class="btn btn-primary" data-toggle="modal" data-target="#studentsModal">Students</button>
+				<div class="modal fade" id="studentsModal" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title">Students</h4>
+							</div>
+							<div class="modal-body">
+								<table id="students-table" class="table table-condensed table-hover">
+									<thead>
+										<tr>
+											<td>Student Name</td>
+											<td>Clubs</td>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
