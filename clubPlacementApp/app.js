@@ -94,6 +94,7 @@ $(function() {
 			model.init();
 			inputView.init();
 			matchResults.init();
+			searchResults.init();
 		},
 
 		getExistingStudents: function() {
@@ -214,6 +215,29 @@ $(function() {
 
 		clear: function() {
 			model.data = {};
+		},
+
+		search: function(studentName) {
+			var studentString = "";
+			for (var s = 0; s < data.newStudents.length; s++) {
+				var student = data.newStudents[s];
+				if (student.name == studentName.toUpperCase()) {
+					var clubsForStudent = student.orgs;
+					var clubsString = "";
+					for (var c = 0; c < clubsForStudent.length; c++) {
+						var club = data.orgs[clubsForStudent[c]];
+						clubsString += club.name + "<br>";
+					}
+					clubsString = clubsString.substring(0, clubsString.length-4);
+					var matchString = "";
+					for (var m = 0; m < student.matchPercentage.length; m++) {
+						matchString += student.matchPercentage[m] + "%<br>";
+					}
+					matchString = matchString.substring(0, matchString.length-5) + "%";
+					studentString += "<tr><td>" + student.name + "</td><td>" + clubsString + "</td><td>" + matchString + "</td></tr>";
+					return studentString;
+				}
+			}
 		}
 
 	};
@@ -313,12 +337,31 @@ $(function() {
 				}
 				var matchString = "";
 				for (m = 0; m < student.matchPercentage.length; m++) {
-					matchString += student.matchPercentage[m] + "<br>";
+					matchString += student.matchPercentage[m] + "%" + "<br>";
 				}
 				orgString = orgString.substring(0, orgString.length-1);
 				matchString = matchString.substring(0, matchString.length-1);
 				result = "<tr><td>" + student.name + "</td><td>" + orgString + "</td><td>" + matchString + "</td></tr>";
 				$("#match-table tbody").append(result);
+			}
+		}
+	};
+
+	var searchResults = {
+		init: function() {
+			$("#search").click(function() {
+				var toRender = controller.search(document.getElementById("search-box").value);
+				searchResults.render(toRender);
+			});
+		},
+
+		render: function(toRender) {
+			$("#student-table thead").append("<td>New Student Name</td><td>Suggested Clubs</td><td>Match Percentage</td></tr>");
+			if (toRender == "") {
+				$("#student-table tbody").append("<tr><td>No student found</td></tr>");
+			}
+			else {
+				$("#student-table tbody").append(toRender);
 			}
 		}
 	};
