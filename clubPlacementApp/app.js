@@ -356,6 +356,8 @@ $(function() {
 		},
 
 		render: function(toRender) {
+			$("#student-table thead").empty();
+			$("#student-table tbody").empty();
 			$("#student-table thead").append("<td>New Student Name</td><td>Suggested Clubs</td><td>Match Percentage</td></tr>");
 			if (toRender == "") {
 				$("#student-table tbody").append("<tr><td>No student found</td></tr>");
