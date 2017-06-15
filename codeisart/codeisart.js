@@ -1,16 +1,182 @@
 var points = [];
 var time = 0;
+var gridCellWidth = 20;
 
 function setup() {
   var canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("codeisart");
-  //drawGrid();
+  drawGrid();
   initializePoints();
 }
 
 function draw() {
   background(255);
-  //drawGrid();
+  drawGrid();
+  drawPoints();
+  if (time >= 600) {
+    points = [];
+    initializePoints();
+    time = 0;
+    drawPoints();
+  }
+  time += 1;
+}
+
+// redraw grid and redraw art when window is resized
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  drawGrid();
+  points = [];
+  initializePoints();
+  time = 0;
+  redraw();
+}
+
+// initialize points to draw
+function initializePoints() {
+  var gridWidth = floor(min(windowWidth, windowHeight)*3/4/120)*120;
+  print(gridWidth);
+  gridCellWidth = floor(gridWidth/24);
+  print(gridCellWidth);
+
+  // C
+  var CstartX = floor((windowWidth-gridWidth)/2)+6*gridCellWidth;
+  var CstartY = floor((windowHeight-gridWidth)/2)+3*gridCellWidth;
+  points.push(new Point(CstartX, CstartY, "down"));
+  points.push(new Point(CstartX-1*gridCellWidth, CstartY, "right"));
+  points.push(new Point(CstartX-2*gridCellWidth, CstartY+1*gridCellWidth, "left"));
+  points.push(new Point(CstartX-2*gridCellWidth, CstartY+2*gridCellWidth, "down"));
+  points.push(new Point(CstartX-2*gridCellWidth, CstartY+3*gridCellWidth, "up"));
+  points.push(new Point(CstartX-1*gridCellWidth, CstartY+4*gridCellWidth, "left"));
+  points.push(new Point(CstartX, CstartY+4*gridCellWidth, "up"));
+  // O
+  var OstartX = CstartX+5*gridCellWidth;
+  var OstartY = CstartY+1*gridCellWidth;
+  points.push(new Point(OstartX, OstartY, "right"));
+  points.push(new Point(OstartX-1*gridCellWidth, OstartY-1*gridCellWidth, "down"));
+  points.push(new Point(OstartX-2*gridCellWidth, OstartY-1*gridCellWidth, "left"));
+  points.push(new Point(OstartX-3*gridCellWidth, OstartY, "right"));
+  points.push(new Point(OstartX-3*gridCellWidth, OstartY+1*gridCellWidth, "down"));
+  points.push(new Point(OstartX-3*gridCellWidth, OstartY+2*gridCellWidth, "up"));
+  points.push(new Point(OstartX-2*gridCellWidth, OstartY+3*gridCellWidth, "left"));
+  points.push(new Point(OstartX-1*gridCellWidth, OstartY+3*gridCellWidth, "up"));
+  points.push(new Point(OstartX, OstartY+2*gridCellWidth, "right"));
+  points.push(new Point(OstartX, OstartY+1*gridCellWidth, "left"));
+  // D
+  var DstartX = CstartX+10*gridCellWidth;
+  var DstartY = CstartY+1*gridCellWidth;
+  points.push(new Point(DstartX, DstartY, "left"));
+  points.push(new Point(DstartX-1*gridCellWidth, DstartY-1*gridCellWidth, "up"));
+  points.push(new Point(DstartX-2*gridCellWidth, DstartY-1*gridCellWidth, "down"));
+  points.push(new Point(DstartX-3*gridCellWidth, DstartY-1*gridCellWidth, "right"));
+  points.push(new Point(DstartX-3*gridCellWidth, DstartY, "left"));
+  points.push(new Point(DstartX-3*gridCellWidth, DstartY+1*gridCellWidth, "right"));
+  points.push(new Point(DstartX-3*gridCellWidth, DstartY+2*gridCellWidth, "down"));
+  points.push(new Point(DstartX-3*gridCellWidth, DstartY+3*gridCellWidth, "left"));
+  points.push(new Point(DstartX-2*gridCellWidth, DstartY+3*gridCellWidth, "up"));
+  points.push(new Point(DstartX-1*gridCellWidth, DstartY+3*gridCellWidth, "right"));
+  points.push(new Point(DstartX, DstartY+2*gridCellWidth, "left"));
+  points.push(new Point(DstartX, DstartY+1*gridCellWidth, "left"));
+  // E
+  var EstartX = CstartX+14*gridCellWidth;
+  var EstartY = CstartY;
+  points.push(new Point(EstartX, EstartY, "up"));
+  points.push(new Point(EstartX-1*gridCellWidth, EstartY, "right"));
+  points.push(new Point(EstartX-2*gridCellWidth, EstartY, "down"));
+  points.push(new Point(EstartX-2*gridCellWidth, EstartY+1*gridCellWidth, "right"));
+  points.push(new Point(EstartX-2*gridCellWidth, EstartY+2*gridCellWidth, "left"));
+  points.push(new Point(EstartX-1*gridCellWidth, EstartY+2*gridCellWidth, "up"));
+  points.push(new Point(EstartX, EstartY+2*gridCellWidth, "left"));
+  points.push(new Point(EstartX-2*gridCellWidth, EstartY+3*gridCellWidth, "down"));
+  points.push(new Point(EstartX-2*gridCellWidth, EstartY+4*gridCellWidth, "right"));
+  points.push(new Point(EstartX-1*gridCellWidth, EstartY+4*gridCellWidth, "left"));
+  points.push(new Point(EstartX, EstartY+4*gridCellWidth, "up"));
+  
+  // I
+  var IstartX = CstartX+5*gridCellWidth;
+  var IstartY = CstartY+7*gridCellWidth;
+  points.push(new Point(IstartX, IstartY, "down"));
+  points.push(new Point(IstartX-1*gridCellWidth, IstartY, "right"));
+  points.push(new Point(IstartX-2*gridCellWidth, IstartY, "up"));
+  points.push(new Point(IstartX-1*gridCellWidth, IstartY+1*gridCellWidth, "left"));
+  points.push(new Point(IstartX-1*gridCellWidth, IstartY+2*gridCellWidth, "right"));
+  points.push(new Point(IstartX-1*gridCellWidth, IstartY+3*gridCellWidth, "up"));
+  points.push(new Point(IstartX-2*gridCellWidth, IstartY+4*gridCellWidth, "down"));
+  points.push(new Point(IstartX-1*gridCellWidth, IstartY+4*gridCellWidth, "left"));
+  points.push(new Point(IstartX, IstartY+4*gridCellWidth, "right"));
+  // S
+  var SstartX = CstartX+9*gridCellWidth;
+  var SstartY = CstartY+7*gridCellWidth;
+  points.push(new Point(SstartX, SstartY, "left"));
+  points.push(new Point(SstartX-1*gridCellWidth, SstartY, "up"));
+  points.push(new Point(SstartX-2*gridCellWidth, SstartY+1*gridCellWidth, "down"));
+  points.push(new Point(SstartX-2*gridCellWidth, SstartY, "right"));
+  points.push(new Point(SstartX-1*gridCellWidth, SstartY+2*gridCellWidth, "up"));
+  points.push(new Point(SstartX, SstartY+3*gridCellWidth, "right"));
+  points.push(new Point(SstartX, SstartY+4*gridCellWidth, "down"));
+  points.push(new Point(SstartX-1*gridCellWidth, SstartY+4*gridCellWidth, "left"));
+  points.push(new Point(SstartX-2*gridCellWidth, SstartY+4*gridCellWidth, "up"));
+  
+  // A
+  var AstartX = CstartX+3*gridCellWidth;
+  var AstartY = CstartY+14*gridCellWidth;
+  points.push(new Point(AstartX, AstartY, "right"));
+  points.push(new Point(AstartX-1*gridCellWidth, AstartY, "up"));
+  points.push(new Point(AstartX-2*gridCellWidth, AstartY, "down"));
+  points.push(new Point(AstartX-2*gridCellWidth, AstartY+1*gridCellWidth, "left"));
+  points.push(new Point(AstartX, AstartY+1*gridCellWidth, "down"));
+  points.push(new Point(AstartX-2*gridCellWidth, AstartY+2*gridCellWidth, "up"));
+  points.push(new Point(AstartX-1*gridCellWidth, AstartY+2*gridCellWidth, "right"));
+  points.push(new Point(AstartX, AstartY+2*gridCellWidth, "up"));
+  points.push(new Point(AstartX-2*gridCellWidth, AstartY+3*gridCellWidth, "right"));
+  points.push(new Point(AstartX, AstartY+3*gridCellWidth, "left"));
+  points.push(new Point(AstartX-2*gridCellWidth, AstartY+4*gridCellWidth, "down"));
+  points.push(new Point(AstartX, AstartY+4*gridCellWidth, "up"));
+  // R
+  var RstartX = CstartX+7*gridCellWidth;
+  var RstartY = CstartY+14*gridCellWidth;
+  points.push(new Point(RstartX, RstartY, "left"));
+  points.push(new Point(RstartX-1*gridCellWidth, RstartY, "down"));
+  points.push(new Point(RstartX-2*gridCellWidth, RstartY, "right"));
+  points.push(new Point(RstartX-2*gridCellWidth, RstartY+1*gridCellWidth, "up"));
+  points.push(new Point(RstartX, RstartY+1*gridCellWidth, "right"));
+  points.push(new Point(RstartX-2*gridCellWidth, RstartY+2*gridCellWidth, "down"));
+  points.push(new Point(RstartX-1*gridCellWidth, RstartY+2*gridCellWidth, "left"));
+  points.push(new Point(RstartX, RstartY+2*gridCellWidth, "up"));
+  points.push(new Point(RstartX-2*gridCellWidth, RstartY+3*gridCellWidth, "left"));
+  points.push(new Point(RstartX-1*gridCellWidth, RstartY+3*gridCellWidth, "right"));
+  points.push(new Point(RstartX-2*gridCellWidth, RstartY+4*gridCellWidth, "down"));
+  points.push(new Point(RstartX, RstartY+4*gridCellWidth, "up"));
+  // T
+  var TstartX = CstartX+11*gridCellWidth;
+  var TstartY = CstartY+14*gridCellWidth;
+  points.push(new Point(TstartX, TstartY, "left"));
+  points.push(new Point(TstartX-1*gridCellWidth, TstartY, "down"));
+  points.push(new Point(TstartX-2*gridCellWidth, TstartY, "right"));
+  points.push(new Point(TstartX-1*gridCellWidth, TstartY+1*gridCellWidth, "left"));
+  points.push(new Point(TstartX-1*gridCellWidth, TstartY+2*gridCellWidth, "right"));
+  points.push(new Point(TstartX-1*gridCellWidth, TstartY+3*gridCellWidth, "up"));
+  points.push(new Point(TstartX-1*gridCellWidth, TstartY+4*gridCellWidth, "left"));
+}
+
+// draw grid
+function drawGrid() {
+  background(255);
+  var gridWidth = floor(min(windowWidth, windowHeight)*3/4/120)*120;
+  noStroke();
+  fill(255);
+  rect(floor((windowWidth-gridWidth)/2), floor((windowHeight-gridWidth)/2), gridWidth, gridWidth);
+  stroke(207, 235, 244);
+  for (var col = floor((windowWidth-gridWidth)/2); col <= floor((windowWidth-gridWidth)/2)+gridWidth; col+=gridCellWidth) {
+    line(col, floor((windowHeight-gridWidth)/2), col, gridWidth+floor((windowHeight-gridWidth)/2));
+  }
+  for (var row = floor((windowHeight-gridWidth)/2); row <= gridWidth+floor((windowHeight-gridWidth)/2); row+=gridCellWidth) {
+    line(floor((windowWidth-gridWidth)/2), row, floor((windowWidth-gridWidth)/2)+gridWidth, row); 
+  }   
+}
+
+// draw points and animate
+function drawPoints() {
   if (time < 260) {
     for (var i = 0; i < points.length; i++) {
       points[i].move(points[i].direction);
@@ -28,155 +194,6 @@ function draw() {
       points[i].finalize();
     }
   }
-  time += 1;
-}
-
-// redraw grid and redraw art when window is resized
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  //drawGrid();
-  points = [];
-  initializePoints();
-  time = 0;
-  redraw();
-}
-
-function initializePoints() {
-  var gridWidth = floor(min(windowWidth, windowHeight)*3/4/120)*120;
-  
-  // C
-  var CstartX = floor((windowWidth-gridWidth)/2)+120;
-  var CstartY = floor((windowHeight-gridWidth)/2)+60;
-  points.push(new Point(CstartX, CstartY, "down"));
-  points.push(new Point(CstartX-20, CstartY, "right"));
-  points.push(new Point(CstartX-40, CstartY+20, "left"));
-  points.push(new Point(CstartX-40, CstartY+40, "down"));
-  points.push(new Point(CstartX-40, CstartY+60, "up"));
-  points.push(new Point(CstartX-20, CstartY+80, "left"));
-  points.push(new Point(CstartX, CstartY+80, "up"));
-  // O
-  var OstartX = CstartX+100;
-  var OstartY = CstartY+20;
-  points.push(new Point(OstartX, OstartY, "right"));
-  points.push(new Point(OstartX-20, OstartY-20, "down"));
-  points.push(new Point(OstartX-40, OstartY-20, "left"));
-  points.push(new Point(OstartX-60, OstartY, "right"));
-  points.push(new Point(OstartX-60, OstartY+20, "down"));
-  points.push(new Point(OstartX-60, OstartY+40, "up"));
-  points.push(new Point(OstartX-40, OstartY+60, "left"));
-  points.push(new Point(OstartX-20, OstartY+60, "up"));
-  points.push(new Point(OstartX, OstartY+40, "right"));
-  points.push(new Point(OstartX, OstartY+20, "left"));
-  // D
-  var DstartX = CstartX+200;
-  var DstartY = CstartY+20;
-  points.push(new Point(DstartX, DstartY, "left"));
-  points.push(new Point(DstartX-20, DstartY-20, "up"));
-  points.push(new Point(DstartX-40, DstartY-20, "down"));
-  points.push(new Point(DstartX-60, DstartY-20, "right"));
-  points.push(new Point(DstartX-60, DstartY, "left"));
-  points.push(new Point(DstartX-60, DstartY+20, "right"));
-  points.push(new Point(DstartX-60, DstartY+40, "down"));
-  points.push(new Point(DstartX-60, DstartY+60, "left"));
-  points.push(new Point(DstartX-40, DstartY+60, "up"));
-  points.push(new Point(DstartX-20, DstartY+60, "right"));
-  points.push(new Point(DstartX, DstartY+40, "left"));
-  points.push(new Point(DstartX, DstartY+20, "left"));
-  // E
-  var EstartX = CstartX+280;
-  var EstartY = CstartY;
-  points.push(new Point(EstartX, EstartY, "up"));
-  points.push(new Point(EstartX-20, EstartY, "right"));
-  points.push(new Point(EstartX-40, EstartY, "down"));
-  points.push(new Point(EstartX-40, EstartY+20, "right"));
-  points.push(new Point(EstartX-40, EstartY+40, "left"));
-  points.push(new Point(EstartX-20, EstartY+40, "up"));
-  points.push(new Point(EstartX, EstartY+40, "left"));
-  points.push(new Point(EstartX-40, EstartY+60, "down"));
-  points.push(new Point(EstartX-40, EstartY+80, "right"));
-  points.push(new Point(EstartX-20, EstartY+80, "left"));
-  points.push(new Point(EstartX, EstartY+80, "up"));
-  
-  // I
-  var IstartX = CstartX+100;
-  var IstartY = CstartY+140;
-  points.push(new Point(IstartX, IstartY, "down"));
-  points.push(new Point(IstartX-20, IstartY, "right"));
-  points.push(new Point(IstartX-40, IstartY, "up"));
-  points.push(new Point(IstartX-20, IstartY+20, "left"));
-  points.push(new Point(IstartX-20, IstartY+40, "right"));
-  points.push(new Point(IstartX-20, IstartY+60, "up"));
-  points.push(new Point(IstartX-40, IstartY+80, "down"));
-  points.push(new Point(IstartX-20, IstartY+80, "left"));
-  points.push(new Point(IstartX, IstartY+80, "right"));
-  // S
-  var SstartX = CstartX+180;
-  var SstartY = CstartY+140;
-  points.push(new Point(SstartX, SstartY, "left"));
-  points.push(new Point(SstartX-20, SstartY, "up"));
-  points.push(new Point(SstartX-40, SstartY+20, "down"));
-  points.push(new Point(SstartX-40, SstartY, "right"));
-  points.push(new Point(SstartX-20, SstartY+40, "up"));
-  points.push(new Point(SstartX, SstartY+60, "right"));
-  points.push(new Point(SstartX, SstartY+80, "down"));
-  points.push(new Point(SstartX-20, SstartY+80, "left"));
-  points.push(new Point(SstartX-40, SstartY+80, "up"));
-  
-  // A
-  var AstartX = CstartX+60;
-  var AstartY = CstartY+280;
-  points.push(new Point(AstartX, AstartY, "right"));
-  points.push(new Point(AstartX-20, AstartY, "up"));
-  points.push(new Point(AstartX-40, AstartY, "down"));
-  points.push(new Point(AstartX-40, AstartY+20, "left"));
-  points.push(new Point(AstartX, AstartY+20, "down"));
-  points.push(new Point(AstartX-40, AstartY+40, "up"));
-  points.push(new Point(AstartX-20, AstartY+40, "right"));
-  points.push(new Point(AstartX, AstartY+40, "up"));
-  points.push(new Point(AstartX-40, AstartY+60, "right"));
-  points.push(new Point(AstartX, AstartY+60, "left"));
-  points.push(new Point(AstartX-40, AstartY+80, "down"));
-  points.push(new Point(AstartX, AstartY+80, "up"));
-  // R
-  var RstartX = CstartX+140;
-  var RstartY = CstartY+280;
-  points.push(new Point(RstartX, RstartY, "left"));
-  points.push(new Point(RstartX-20, RstartY, "down"));
-  points.push(new Point(RstartX-40, RstartY, "right"));
-  points.push(new Point(RstartX-40, RstartY+20, "up"));
-  points.push(new Point(RstartX, RstartY+20, "right"));
-  points.push(new Point(RstartX-40, RstartY+40, "down"));
-  points.push(new Point(RstartX-20, RstartY+40, "left"));
-  points.push(new Point(RstartX, RstartY+40, "up"));
-  points.push(new Point(RstartX-40, RstartY+60, "left"));
-  points.push(new Point(RstartX-20, RstartY+60, "right"));
-  points.push(new Point(RstartX-40, RstartY+80, "down"));
-  points.push(new Point(RstartX, RstartY+80, "up"));
-  // T
-  var TstartX = CstartX+220;
-  var TstartY = CstartY+280;
-  points.push(new Point(TstartX, TstartY, "left"));
-  points.push(new Point(TstartX-20, TstartY, "down"));
-  points.push(new Point(TstartX-40, TstartY, "right"));
-  points.push(new Point(TstartX-20, TstartY+20, "left"));
-  points.push(new Point(TstartX-20, TstartY+40, "right"));
-  points.push(new Point(TstartX-20, TstartY+60, "up"));
-  points.push(new Point(TstartX-20, TstartY+80, "left"));
-}
-
-function drawGrid() {
-  background(255);
-  var gridWidth = floor(min(windowWidth, windowHeight)*3/4/120)*120;
-  noStroke();
-  fill(255);
-  rect(floor((windowWidth-gridWidth)/2), floor((windowHeight-gridWidth)/2), gridWidth, gridWidth);
-  stroke(175, 223, 237);
-  for (var col = floor((windowWidth-gridWidth)/2); col <= floor((windowWidth-gridWidth)/2)+gridWidth; col+=20) {
-    line(col, floor((windowHeight-gridWidth)/2), col, gridWidth+floor((windowHeight-gridWidth)/2));
-  }
-  for (var row = floor((windowHeight-gridWidth)/2); row <= gridWidth+floor((windowHeight-gridWidth)/2); row+=20) {
-    line(floor((windowWidth-gridWidth)/2), row, floor((windowWidth-gridWidth)/2)+gridWidth, row); 
-  }   
 }
 
 // class Point
@@ -185,8 +202,8 @@ function Point(finalx, finaly, direction) {
   this.finalPosX = finalx;
   this.finalPosY = finaly;
   this.direction = direction;
-  this.speed = 2;
-  this.diameter = 8;  
+  this.speed = gridWidth/200;
+  this.diameter = gridWidth/40;
   if (this.direction == "right" || this.direction == "left") {
     this.initialPosX = floor((windowWidth-gridWidth)/2)+round(random(gridWidth));
     this.initialPosY = this.finalPosY;
