@@ -106,7 +106,7 @@
 
             <div class="row content">
                 <div class="col-lg-12">
-                    <p style="font-size: 24px">Here is a collection of my completed works and my WIPs (works-in-progress):</p>
+                    <p style="font-size: 24px">Here is a collection of projects I've worked on:</p>
                     <br><br>
                 </div>
             </div>
@@ -215,23 +215,34 @@
 
         var wips = [
             {
-                "name": "Eyebrowse",
-                "url": "eyebrowse.csail.mit.edu",
-                "date": "June 2017 to Present",
-                "tools": "HTML, CSS, JavaScript, jQuery, Django, Git",
-                "description": "Worked in the MIT CSAIL Haystack Group on expanding sharing features for Eyebrowse, an open source social browsing tool",
-                "picture": ""
+                "name": "Reuse",
+                "url": "https://docs.google.com/presentation/d/17ku7Y3oEG4HYlFEg5lSV96PRjygLgTJEnwjgh9qaR70/edit?usp=sharing",
+                "date": "Aug 2017 to Present",
+                "tools": "Figma, Swift, Xcode",
+                "description": "Led a seven-member Design for America team in the design and development of a mobile app encouraging reusing on MIT's campus",
+                "picture": "reuse.png",
+                "types": "mobile app"
             }
         ];
 
-        var completed = [        
+        var completed = [
+            {
+                "name": "SpeeDoodle",
+                "url": "https://chrome.google.com/webstore/detail/speedoodle/lalbcphldbcignmifdmgjdidkegjhecd",
+                "date": "Jan 2018",
+                "tools": "HTML, CSS, JavaScript",
+                "description": "Designed, developed, and distributed a chrome extension that allows a user to doodle on a New Tab page",
+                "picture": "speedoodle.png",
+                "types": "chrome extension, personal project"
+            },  
             {
                 "name": "Code is Art",
                 "url": "http://margaretyu.me/codeisart",
                 "date": "June 2017",
                 "tools": "HTML, p5.js, Processing, JavaScript, Git",
                 "description": "Designed and wrote code for an animated art piece",
-                "picture": "codeisart.gif"
+                "picture": "codeisart.gif",
+                "types": "personal project"
             },
             {
                 "name": 'ACCESS2',
@@ -239,7 +250,8 @@
                 "date": "October 2016",
                 "tools": "HTML, CSS, JavaScript, jQuery, Node.js, Express.js, Heroku, Leaflet.js, Twilio API, Git",
                 "description": "Built a web app for WHACK16 in a team of 2 that provides info about Wellesley College access van stops and can send a text when the van is approaching",
-                "picture": "access2.gif"
+                "picture": "access2.gif",
+                "types": "hackathon project, web app"
             },
             {
                 "name": "DoneGood",
@@ -247,7 +259,8 @@
                 "date": "Oct 2015 to Oct 2016",
                 "tools": "HTML, CSS, JavaScript, Node.js, Express.js, Jade, MongoDB",
                 "description": "Prototyped a web application for DoneGood, a startup that connects consumers with businesses that share their values",
-                "picture": "donegood.PNG"
+                "picture": "donegood.PNG",
+                "types": "startup project, web app"
             },            
             {
                 "name": "S'mores",
@@ -255,7 +268,8 @@
                 "date": "Jan 2016",
                 "tools": "HTML, CSS, JavaScript, jQuery, Node.js, Express.js, Handlebars.js, Heroku, Git",
                 "description": "Built a weekly meal planning web application using fullstack web development tools",
-                "picture": "smores.PNG"
+                "picture": "smores.PNG",
+                "types": "web app"
             },
             {
                 "name": "Big Data Analytics for Andorra",
@@ -263,7 +277,8 @@
                 "date": "Sept 2015 to Jan 2016",
                 "tools": "Python, Processing, R, HTML, CSS, JavaScript, Leaflet.js",
                 "description": "Performed data analysis and created data visualizations to understand Andorra's dynamics on tourism and human mobility",
-                "picture": "andorra.PNG"
+                "picture": "andorra.PNG",
+                "types": "research project, data viz"
             },            
             {
                 "name": "Glance",
@@ -271,7 +286,8 @@
                 "date": "July 2015 to Aug 2015",
                 "tools": "HTML, CSS, JavaScript, jQuery, Leaflet.js, Git",
                 "description": "Designed and built a map visualization for exploring geographical and topical relationships between news articles",
-                "picture": "glance.PNG"
+                "picture": "glance.PNG",
+                "types": "research project, data viz"
             },        
             {
                 "name": "Learning Media",
@@ -279,7 +295,8 @@
                 "date": "Jan 2015 to June 2015",
                 "tools": "HTML, CSS, Bootstrap, JavaScript, jQuery, D3.js, Git",
                 "description": "Designed various UI features for the dashboard for Learning Media, a web application that enables users to customize how they experience different forms of media",
-                "picture": "learningmedia.gif"
+                "picture": "learningmedia.gif",
+                "types": "research project, web app"
             },       
             {
                 "name": "Guess It",
@@ -287,7 +304,8 @@
                 "date": "June 2015",
                 "tools": "HTML, CSS, JavaScript, jQuery, Git",
                 "description": "Designed and wrote code for a number sequence guessing game",
-                "picture": "guessit.PNG"
+                "picture": "guessit.PNG",
+                "types": "personal project, web game"
             },      
             {
                 "name": "College Kickstart",
@@ -295,7 +313,8 @@
                 "date": "Jan 2015",
                 "tools": "HTML, CSS, UI Kit, Google Visualization API, JavaScript, jQuery, Joomla!, PHP, MySQL",
                 "description": "Analyzed data from and created data visualizations of Beta Testing results of the first version of College Kickstart, a web-based college application planning service",
-                "picture": "collegekickstart.gif"
+                "picture": "collegekickstart.gif",
+                "types": "intern project, data viz"
             },
             {
                 "name": "MIT2048",
@@ -303,7 +322,8 @@
                 "date": "June 2014",
                 "tools": "HTML, CSS, JavaScript, jQuery, Git",
                 "description": "Designed an MIT-Class-of-2018-themed 2048 game",
-                "picture": "MIT2048.PNG"
+                "picture": "MIT2048.PNG",
+                "types": "personal project, web game"
             }            
         ];
 
@@ -359,10 +379,19 @@
             return add;
         }
 
+        function showTypes(types) {
+            var add = "";
+            types = types.split(',');
+            $.each(types, function(typeIndex, type) {
+                add += "<div class='type'>"+type+"</div>";
+            });
+            return add;
+        }
+
         function makeProjectRows(projects, type) {
             var projectAdd = "";
             $.each(projects, function(projectsIndex, project) {
-                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><a class='project-container' href='"+project.url+"' target='_blank' title='"+project.name+"'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><p class='project-name'>"+project.name+"</p><div class='project-tools clearfix'>"+showTools(project.tools)+"</div></div><div style='background-image: url("+project.picture+"); background-size: 95%; background-position: center top; background-repeat: no-repeat' class='project-description'><p class='project-desc'>"+project.description+"</p></div></div></a></div>";
+                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><a class='project-container' href='"+project.url+"' target='_blank' title='"+project.name+"'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><p class='project-name'>"+project.name+"</p><div class='project-tools clearfix'>"+showTools(project.tools)+showTypes(project.types)+"</div></div><div style='background-image: url("+project.picture+"); background-size: 95%; background-position: center top; background-repeat: no-repeat' class='project-description'><p class='project-desc'>"+project.description+"</p></div></div></a></div>";
             });
             if (type == "wips") {
                 $("#projects .container #wips").append("<div class='row'>"+projectAdd+"</div><br><br><br>");
