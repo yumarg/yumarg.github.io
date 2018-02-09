@@ -1,0 +1,1 @@
+Assignments for CMS.609 The Word Made Digital taught by Nick Montfort, as taught in Spring 2018

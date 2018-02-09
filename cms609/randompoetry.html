@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+Random Poetry reimplementation & translation
+copyright (c) 2017 Nick Montfort <nickm@nickm.com>
+a translation of a 1989 MUMPS program by Michal Murin
+originally in Slovak
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved. This file is offered as-is,
+without any warranty.
+-->
+<style type="text/css">
+/* <![CDATA[ */
+body {
+ background:#000;
+ color:#ccc;
+ margin:0 0 0 18pt;
+ font-family:Optima, sans-serif;
+ font-size:16pt;
+}
+a {
+ color:#55f;
+ text-decoration:none;
+}
+#main {
+ padding-top:18px;
+ width:70%;
+ font-family:monospace;
+}
+#main div {
+ font-weight:bold;
+ padding-bottom:9px;
+}
+#info {
+ top:0;
+ right:0;
+ bottom:0;
+ position:absolute;
+ height:100%;
+ width:25%;
+ color:#333;
+ background:#999;
+ margin-left:6px;
+ border-left:thin #000 solid;
+ border-bottom:thin #000 solid;
+ padding:9px;
+ font-size:80%
+}
+/* ]]> */
+</style>
+<script type="text/javascript">
+
+function generate() {
+    var yes = 0, text = "", main = document.getElementById('main'), last = document.createElement('div');
+    for (y=1; y<21; y++) {
+        for (x=1; x<6; x++) {
+            if (Math.random()<.5) {
+                text = text + "in ";
+                yes += 1;
+            }
+            else {
+                text = text + "out ";
+            }
+        }
+        text = text + "<br>\n";
+    }
+    last.innerHTML = text;
+    main.appendChild(last);
+//  Originally I included the following code to change the background
+//  color to black or white according to who "won." Clever, but this is
+//  not in Murin's program, so I have commented this code out:
+//
+//  if (yes < 50) {
+//      document.body.style.background = "#fff";
+//      document.body.style.color = "#000";
+//  }
+}
+
+</script>
+  <title>Random Poetry</title>
+</head>
+
+<body onload="generate();">
+<div id="info">
+    <h2>Random Poetry</h2>
+    Reimplemented by<br />
+    <a href="http://margaretyu.me" target="_blank">Margaret Yu</a><br />
+    for <a href="https://nickm.com/classes/the_word_made_digital/2018_spring/" target="_blank">CMS.609</a><br />
+    This is based on Michal Murin's random poetry translated by Nick Montfort &amp; Zuzana Husarova for <a href="http://nickm.com/memslam/" target="_blank">Memory Slam</a>
+    </div>
+<div id="main">
+    <div>Margaret Yu</div>
+    <div>In &amp; Out</div>
+    <div style="font-size:10pt"> <a href="javascript:location.reload()" target="_blank" style="background: #fff; padding: 2pt">RELOAD</a> for another outcome</div>
+    <div>&nbsp;</div>
+</div>
+</body>
+</html>
