@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Punctuations</title>
+<title>Basketball</title>
 <style type="text/css">
 body {
 	font-family: Arial;
 	font-size: 20px;
-	background-color: black;
+	background-color: #ff8100;
 	color: white;
 }
 .container {
@@ -21,7 +21,7 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
-	color: #85f5ff;
+	color: #000000;
 	font-size: 40px;
 }
 
@@ -42,43 +42,40 @@ body {
 	text-align: center;
 }
 
-.punc {
-	color: #85f5ff;
-	font-weight: bold;
-	font-size: 24px;
-}
-
 a {
 	text-decoration: none;
-	color: #85f5ff;
+	color: #000000;
 }
 </style>
 </head>
 <body>
 	<div class="container">
-		<div id="title">An Exploration of Punctuation</div>
+		<div id="title">Basketball</div>
 
-		<div id="text">Alright<span class="punc" id="punc_1">,</span> let's have this out<span class="punc" id="punc_2">,</span> right here and now<span class="punc" id="punc_3">.</span><br/> What do you mean<span class="punc" id="punc_4">,</span> telling me you're busy<span class="punc" id="punc_5">?</span>
-			<!--<br/> When I tell you I want to talk to you<span class="punc" id="punc_6">,</span> I mean now<span class="punc" id="punc_7">,</span> mister<span class="punc" id="punc_8">.</span><br/> I mean jump<span class="punc" id="punc_9">!</span><br/> Don't you ever tell me you're too busy to see me<span class="punc" id="punc_10">.</span><br/> Ever<span class="punc" id="punc_11">.</span>-->
+		<div id="text">
+			<span class="move" id="move_1"></span>.<br/>
+			<span class="move" id="move_2"></span>.<br/>
+			<span class="move" id="move_3"></span>.<br/>
 		</div>
 		
 		<div id="about">Created by <a href="http://margaretyu.me" target="_blank">Margaret Yu</a> for <a href="http://nickm.com/classes/the_word_made_digital/2018_spring/" target="_blank">CMS.609</a></div>
 	</div>
 
 <script type="text/javascript">
-possible_puncs = ["!", ",", ".", "?"];
-function generate() {
-	all_puncs = document.getElementsByClassName("punc");
-	for (i=0; i < all_puncs.length; i++) {
-		index = Math.floor(Math.random()*4);
-		new_punc = possible_puncs[index];
-		document.getElementById("punc_"+String(i+1)).innerHTML = new_punc;
+	possible_moves = ["He shoots", "He passes", "He scores", "He misses", "He dribbles", "He dunks", "He fakes", "He turns around", "He trips", "He layups", "He fouls", "He gets fouled", "He steals", "He blocks"];
+	function generate() {
+		all_moves = document.getElementsByClassName("move");
+		for (i = 0; i < all_moves.length; i++) {
+			index = Math.floor(Math.random()*14);
+			new_move = possible_moves[index];
+			document.getElementById("move_"+String(i+1)).innerHTML = new_move;
+		}
 	}
-}
 
-(function() {
-	setInterval(generate, 7000);
-})();
+	(function() {
+		generate();
+		setInterval(generate, 5000);
+	})();
 </script>
 </body>
 </html>
