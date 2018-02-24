@@ -1,437 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
+	<meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Personal website of Margaret Yu. About, Projects, Links to other profiles">
-
-    <title>Margaret Yu</title>
-    <link href="http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet" type="text/css"/>    
-    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+	<title>Margaret Yu</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i|Pompiere|Roboto+Condensed" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/hint.css/1.3.2/hint.min.css">
     <link href="stylesheet.css" rel="stylesheet"/>
-    <link rel="icon" href="http://yumarg.github.io/myfavicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="http://yumarg.github.io/myfavicon.ico"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/jquery.typer.js"></script>
-    <script src="js/scrollbutton.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/typer.js"></script>
+    <script type="text/javascript" src="js/scrollbutton.js"></script>
 </head>
+<body>
 
-<body class="container clearfix">    
+	<div class="logo"><a href="./index.html" title="Go to home"><img src="images/logo.png"/></a></div>
 
-    <div id="enter" style="text-align: center">
-        <a href="#intro" title="Enter site">
-            <img src="sm-logo.png" id="enter-button" class="button pulse"/>
-        </a>
-    </div>
+	<div id="homepage">
+		<div id="hello"><p>Hello there! My name is <span class="golden">Margaret</span>.</p></div>
 
-    <nav id="header" class="navbar navbar-default navbar-fixed-top topnav">
+		<div id="intro"><p>I am <span class="golden" data-typer-targets="a student,a scientific artist,a musician,a dancer,a thinker,an aesthete,an optimist,a lifelong learner,a self-motivator"></span> <br/>
+        who is passionate about <span class="golden" data-typer-targets="human computer interaction,system design,data science,UI/UX,artificial intelligence,machine learning,software engineering,design,creative coding,education"></span>.</p></div>
 
-        <div class="container">
+		<div id="navigation">
+			<div id="nav-who" class="navigator">who</div><div id="nav-what" class="navigator">what</div><div id="nav-when" class="navigator">when</div><div id="nav-where" class="navigator">where</div><div id="nav-why" class="navigator">why</div>
+		</div>
+	</div>
 
-            <div id="navigation" class="container clearfix" role="navigation">
+	<div id="who">
+		<div id="whoiam"><p>WHO I AM &hellip;</p></div>
 
-                <a href="#intro" id="title" title="Go to home"><img class="home navbar-brand" src="sm-logo.png"><span class="title-Margaret">Margaret </span><span class="title-Yu">Yu</span></a>
+		<div id="description"><p>I am currently a senior studying Computer Science and Engineering (among many other things) at Massachusetts Institute of Technology in Cambridge, MA. I am originally from Monterey Park, CA.</p></div>
 
-                <ul id="list" class="nav navbar-nav navbar-right">
-                    <li><a href="#about" id="about-button" title="Go to About">About</a></li>
-                    <li><a href="#projects" id="projects-button" title="Go to Projects">Projects</a></li>
-                    <li><a href="#contact" id="contact-button" title="Contact">Contact</a></li>
-                </ul>
-            </div>
+		<img id="pic" src="images/me.jpg"/>
 
-        </div>
+		<div id="caption"><p>Live life to the fullest.</p></div>
 
-    </nav>
+		<div id="left" class="nav"><div id="left-arrow" class="arrow golden">&larr;</div><p class="blue">home</p></div>
+		<div id="right" class="nav"><div id="right-arrow" class="arrow golden">&rarr;</div><p class="blue">what</p></div>
+	</div>
 
-    <div id="intro">
-        <div class="container">
+	<div id="what">
+		<div id="whatido"><p>WHAT I DO &hellip;</p></div>
 
-            <a href="#intro" style="z-index: 1000" class="returntotop" title="Return to top"><i class="fa fa-chevron-up"></i></a>            
+		<div id="projectintro"><p>These are some of the projects I've worked on:</p></div>
 
-            <div class="row content">
-                <div class="col-lg-12">
-                    <p>
-                        Hello there! My name is <span style="color: #b667da">Margaret</span>.
-                    </p>
-                    <br><br><br>
-                    <p>
-                        I am <span class="typers" data-typer-targets="a student,a scientific artist,a musician,a dancer,a thinker,an aesthete,an optimist,a lifelong learner,a self-motivator"></span> <br>
-                        who is passionate about <span class="typers" data-typer-targets="human computer interaction,system design,data science,UI/UX,artificial intelligence,machine learning,software engineering,design,creative coding,education"></span>.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div id="projects" class="container flexscroll"></div>
 
-    <div id="about">
-        <div class="container">
+		<div id="left" class="nav"><div id="left-arrow" class="arrow golden">&larr;</div><p class="blue">who</p></div>
+		<div id="right" class="nav"><div id="right-arrow" class="arrow golden">&rarr;</div><p class="blue">when</p></div>
+	</div>
 
-            <a href="#about" style="z-index: 1000" class="returntotop" title="Return to top"><i class="fa fa-chevron-up"></i></a>            
+	<div id="when">
+		<div id="whenimfree"><p>WHEN I'M FREE &hellip;</p></div>
 
-            <div class="row content">
-                <div class="col-lg-12">
-                    <p>
-                        I am currently a senior studying Computer Science and Engineering (among many other things) at Massachusetts Institute of Technology in Cambridge, MA. I am originally from Monterey Park, CA.
-                    </p>
+		<div id="hobbiesintro"><p>These are some things I love:</p></div>
 
-                    <br><br>
+		<div id="hobbies" width="475px" height="255px">
+			<div id="penspinning" class="hobby">Penspinning</div>
+			<div id="writing" class="hobby">Writing</div>
+			<div id="singing" class="hobby">Singing</div>
+			<div id="instrumentalmusic" class="hobby">Instrumental music</div>
+			<div id="walks" class="hobby">Walks</div>
+			<div id="tabletennis" class="hobby">Table tennis</div>
+			<div id="basketball" class="hobby">Basketball</div>
+			<div id="nature" class="hobby">Nature</div>
+			<div id="tedtalks" class="hobby">TED talks</div>
+			<div id="makingmusic" class="hobby">Making music</div>
+			<div id="dance" class="hobby">Dance</div>
+			<div id="whistling" class="hobby">Whistling</div>
+			<div id="photography" class="hobby">Photography</div>
+		</div>
 
-                    <img src="me.jpg" title="me in the U.S. Virgin Islands, spring break 2017" alt="Me" />
+		<div id="left" class="nav"><div id="left-arrow" class="arrow golden">&larr;</div><p class="blue">what</p></div>
+		<div id="right" class="nav"><div id="right-arrow" class="arrow golden">&rarr;</div><p class="blue">where</p></div>
+	</div>
 
-                    <p style="font-size: 16px; margin-bottom: -20px"><i>Live life to the fullest.</i></p>
+	<div id="where">
+		<div id="wheretofindme"><p>WHERE TO FIND ME &hellip;</p></div>
 
-                    <br><br>
+		<div id="profilesintro"><p>These are some of my profiles elsewhere on the web:</p></div>
 
-                    <p>
-                        Some things I love: photography, going on walks, nature, dance, blogging, choral music, TED, string art, basketball, dark chocolate, jamming sessions, whistling
-                    </p>
+		<div id="profiles" class="container flexscroll"></div>
 
-                </div>
-            </div>
+		<div id="email">
+			<p>Email me at <span class="obfuscate">moc.liamg@teragram.uym</span> if you'd like to contact me. <br/> <strong style="font-size: 18px">*</strong><i style="font-size: 18px">I've obfuscated my email address so that when it is copied, the address is flipped.</i></p>
+		</div>
 
-        </div>
-    </div>
+		<div id="left" class="nav"><div id="left-arrow" class="arrow golden">&larr;</div><p class="blue">when</p></div>
+		<div id="right" class="nav"><div id="right-arrow" class="arrow golden">&rarr;</div><p class="blue">why</p></div>
+	</div>
 
-    <div id="projects">
-        <div class="container">
+	<div id="why">
+		<div id="whyiam"><p>WHY I AM &hellip;</p></div>
 
-            <a href="#projects" style="z-index: 1000" class="returntotop" title="Return to top"><i class="fa fa-chevron-up"></i></a>            
+		<div id="influencesintro"><p>These are some things that have shaped me into who I am: <br/> <strong style="font-size: 18px">*</strong><i style="font-size: 18px">In no particular order</i></p></div>
 
-            <div class="row content">
-                <div class="col-lg-12">
-                    <p style="font-size: 24px">Here is a collection of projects I've worked on:</p>
-                    <br><br>
-                </div>
-            </div>
+		<div id="influences" class="container flexscroll"></div>
 
-            <div class="row">
-                <div id="wips" class="col-lg-12">
-                    <p><strong>W I P s (works-in-progress)</strong></p>
-                    <br>
-                </div>
-            </div>
+		<div id="left" class="nav"><div id="left-arrow" class="arrow golden">&larr;</div><p class="blue">where</p></div>
+		<div id="right" class="nav"><div id="right-arrow" class="arrow golden">&rarr;</div><p class="blue">home</p></div>
+	</div>
 
-            <div class="row">
-                <div id="completed" class="col-lg-12">
-                    <p><strong>C O M P L E T E D</strong></p>
-                    <br>
-                </div>
-            </div>
+	<div class="copyright">&copy;
+		<script type="text/javascript">
+        	var year = new Date(); 
+          	year = year.getFullYear(); 
+          	document.write(year);
+      	</script> <span class="golden">Margaret Yu</span>
+	</div>
 
-        </div>
-    </div>  
 
-    <div id="contact">
-        <div class="container">    
+	<script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-            <a href="#contact" style="z-index: 1000" class="returntotop" title="Return to top"><i class="fa fa-chevron-up"></i></a>  
-
-            <div class="row content">
-                <div id="profiles" class="col-lg-12">
-                    <p>Check out my other profiles elsewhere on the web:</p>
-                    <br><br>
-                </div>
-            </div>
-
-            <div class="row content">
-                <div class="col-lg-12 container">
-                    <p>Email me at <span class="obfuscate">ude.tim@uygram</span> if you'd like to contact me. <br> <strong style="font-size: 14px">*</strong><i style="font-size: 14px">I've obfuscated my email address so that when it is copied, the address is flipped.</i>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <footer id="footer"> 
-        <div class="container">
-            <div class="row">
-                <div class="col-log-12">
-
-                    <p id="copyright">
-                      &copy; 
-                      <script type="text/javascript">
-                        var year = new Date(); 
-                          year = year.getFullYear(); 
-                          document.write(year);
-                      </script> Margaret Yu
-                      <img src="sm-logo.png">
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </footer>  
-
-    <script>
-    $(document).ready(function() {     
-        enter = setTimeout(function() {$("#enter-button").trigger("click")}, 3000);
-        $("#enter-button").click(function() {
-            clearTimeout(enter);
-            $(this).removeClass("pulse");
-            $(this).hide();
-            $("#header").show();
-            $("#navigation").show();
-            $("#intro").show("slow");
-            $("#footer").show("slow");
-        });
-        $("#title").click(function() {
-            $("#about").hide();
-            $("#projects").hide();     
-            $("#contact").hide();       
-            $("#intro").show("slow");
-            $("#footer").show("slow");
-        });
-        $("#about-button").click(function() {   
-            $("#intro").hide();
-            $("#projects").hide();
-            $("#contact").hide();
-            $("#about").show("slow");
-            $("#footer").show("slow");
-        });
-        $("#projects-button").click(function() {        
-            $("#intro").hide();
-            $("#about").hide();
-            $("#contact").hide();
-            $("#projects").show("slow");
-            $("#footer").show("slow");
-        });
-        $("#contact-button").click(function() {    
-            $("#intro").hide();
-            $("#about").hide();
-            $("#projects").hide();
-            $("#contact").show("slow");
-            $("#footer").show("slow");            
-        });
-
-        $('[data-typer-targets]').typer();  
-
-        var wips = [
-            {
-                "name": "Reuse",
-                "url": "https://docs.google.com/presentation/d/17ku7Y3oEG4HYlFEg5lSV96PRjygLgTJEnwjgh9qaR70/edit?usp=sharing",
-                "date": "Aug 2017 to Present",
-                "tools": "Figma, Swift, Xcode",
-                "description": "Led a seven-member Design for America team in the design and development of a mobile app encouraging reusing on MIT's campus",
-                "picture": "reuse.png",
-                "types": "mobile app"
-            }
-        ];
-
-        var completed = [
-            {
-                "name": "SpeeDoodle",
-                "url": "https://chrome.google.com/webstore/detail/speedoodle/lalbcphldbcignmifdmgjdidkegjhecd",
-                "date": "Jan 2018",
-                "tools": "HTML, CSS, JavaScript",
-                "description": "Designed, developed, and distributed a chrome extension that allows a user to doodle on a New Tab page",
-                "picture": "speedoodle.png",
-                "types": "chrome extension, personal project"
-            },  
-            {
-                "name": "Code is Art",
-                "url": "http://margaretyu.me/codeisart",
-                "date": "June 2017",
-                "tools": "HTML, p5.js, Processing, JavaScript, Git",
-                "description": "Designed and wrote code for an animated art piece",
-                "picture": "codeisart.gif",
-                "types": "personal project"
-            },
-            {
-                "name": 'ACCESS2',
-                "url": "https://access2.herokuapp.com",
-                "date": "October 2016",
-                "tools": "HTML, CSS, JavaScript, jQuery, Node.js, Express.js, Heroku, Leaflet.js, Twilio API, Git",
-                "description": "Built a web app for WHACK16 in a team of 2 that provides info about Wellesley College access van stops and can send a text when the van is approaching",
-                "picture": "access2.gif",
-                "types": "hackathon project, web app"
-            },
-            {
-                "name": "DoneGood",
-                "url": "http://donegood.co",
-                "date": "Oct 2015 to Oct 2016",
-                "tools": "HTML, CSS, JavaScript, Node.js, Express.js, Jade, MongoDB",
-                "description": "Prototyped a web application for DoneGood, a startup that connects consumers with businesses that share their values",
-                "picture": "donegood.PNG",
-                "types": "startup project, web app"
-            },            
-            {
-                "name": "S'mores",
-                "url": "http://smoresplanner.herokuapp.com",
-                "date": "Jan 2016",
-                "tools": "HTML, CSS, JavaScript, jQuery, Node.js, Express.js, Handlebars.js, Heroku, Git",
-                "description": "Built a weekly meal planning web application using fullstack web development tools",
-                "picture": "smores.PNG",
-                "types": "web app"
-            },
-            {
-                "name": "Big Data Analytics for Andorra",
-                "url": "http://web.mit.edu/margyu/www/hourly/hourly.html",
-                "date": "Sept 2015 to Jan 2016",
-                "tools": "Python, Processing, R, HTML, CSS, JavaScript, Leaflet.js",
-                "description": "Performed data analysis and created data visualizations to understand Andorra's dynamics on tourism and human mobility",
-                "picture": "andorra.PNG",
-                "types": "research project, data viz"
-            },            
-            {
-                "name": "Glance",
-                "url": "http://viral.media.mit.edu/projects/glance/",
-                "date": "July 2015 to Aug 2015",
-                "tools": "HTML, CSS, JavaScript, jQuery, Leaflet.js, Git",
-                "description": "Designed and built a map visualization for exploring geographical and topical relationships between news articles",
-                "picture": "glance.PNG",
-                "types": "research project, data viz"
-            },        
-            {
-                "name": "Learning Media",
-                "url": "http://viral.media.mit.edu/projects/learning_media/",
-                "date": "Jan 2015 to June 2015",
-                "tools": "HTML, CSS, Bootstrap, JavaScript, jQuery, D3.js, Git",
-                "description": "Designed various UI features for the dashboard for Learning Media, a web application that enables users to customize how they experience different forms of media",
-                "picture": "learningmedia.gif",
-                "types": "research project, web app"
-            },       
-            {
-                "name": "Guess It",
-                "url": "http://margaretyu.me/GuessIt",
-                "date": "June 2015",
-                "tools": "HTML, CSS, JavaScript, jQuery, Git",
-                "description": "Designed and wrote code for a number sequence guessing game",
-                "picture": "guessit.PNG",
-                "types": "personal project, web game"
-            },      
-            {
-                "name": "College Kickstart",
-                "url": "https://www.college-kickstart.com/",
-                "date": "Jan 2015",
-                "tools": "HTML, CSS, UI Kit, Google Visualization API, JavaScript, jQuery, Joomla!, PHP, MySQL",
-                "description": "Analyzed data from and created data visualizations of Beta Testing results of the first version of College Kickstart, a web-based college application planning service",
-                "picture": "collegekickstart.gif",
-                "types": "intern project, data viz"
-            },
-            {
-                "name": "MIT2048",
-                "url": "http://margaretyu.me/MIT2048",
-                "date": "June 2014",
-                "tools": "HTML, CSS, JavaScript, jQuery, Git",
-                "description": "Designed an MIT-Class-of-2018-themed 2048 game",
-                "picture": "MIT2048.PNG",
-                "types": "personal project, web game"
-            }            
-        ];
-
-        var profiles = [
-            {
-                "name": "LinkedIn",
-                "url": "https://www.linkedin.com/in/margyu",
-                "icontype": "url",
-                "icon": "LinkedIn-logo.png",
-                "tooltip": "See my profile on LinkedIn",
-                "color": "#0077b5"
-            },       
-            {
-                "name": "GitHub",
-                "url": "https://github.com/yumarg",
-                "icontype": "fontawesome",
-                "icon": "fa fa-github fa-5x",
-                "tooltip": "See my projects on GitHub",
-                "color": "#000"
-            },
-            {
-                "name": "Instagram",
-                "url": "https://instagram.com/themyuse",
-                "icontype": "fontawesome",
-                "icon": "fa fa-instagram fa-5x",
-                "tooltip": "See my pictures on Instagram",
-                "color": "#8a3ab9"
-            },
-            {
-                "name": "Wordpress",
-                "url": "https://fromthemuseinme.wordpress.com",
-                "icontype": "fontawesome",
-                "icon": "fa fa-wordpress fa-5x",
-                "tooltip": "See my Wordpress website + blog",
-                "color": "#21759b"
-            },
-            {
-                "name": "Pinterest",
-                "url": "https://pinterest.com/yumarg",
-                "icontype": "fontawesome",
-                "icon": "fa fa-pinterest fa-5x",
-                "tooltip": "See my saved pins on Pinterest",
-                "color": "#bd081c"
-            }
-        ];
-
-        function showTools(tools) {
-            var add = "";
-            tools = tools.split(',');
-            $.each(tools, function(toolIndex, tool) {
-                add += "<div class='tool'>"+tool+"</div>";
-            });
-            return add;
-        }
-
-        function showTypes(types) {
-            var add = "";
-            types = types.split(',');
-            $.each(types, function(typeIndex, type) {
-                add += "<div class='type'>"+type+"</div>";
-            });
-            return add;
-        }
-
-        function makeProjectRows(projects, type) {
-            var projectAdd = "";
-            $.each(projects, function(projectsIndex, project) {
-                projectAdd += "<div class='project col-md-3 col-sm-6 col-xs-12 container'><a class='project-container' href='"+project.url+"' target='_blank' title='"+project.name+"'><div class='project-container'><div class='project-cover'><p class='project-date'>"+project.date+"</p><p class='project-name'>"+project.name+"</p><div class='project-tools clearfix'>"+showTools(project.tools)+showTypes(project.types)+"</div></div><div style='background-image: url("+project.picture+"); background-size: 95%; background-position: center top; background-repeat: no-repeat' class='project-description'><p class='project-desc'>"+project.description+"</p></div></div></a></div>";
-            });
-            if (type == "wips") {
-                $("#projects .container #wips").append("<div class='row'>"+projectAdd+"</div><br><br><br>");
-            }
-            else if (type == "completed") {
-                $("#projects .container #completed").append("<div class='row'>"+projectAdd+"</div><br><br><br>");
-            }            
-        }
-
-        function makeImg(icontype, icon, color) {
-            if (icontype == "url") {
-                return "<img style='color: "+color+"' src='"+icon+"'/>";
-            }
-            else if (icontype == "fontawesome") {
-                return "<i style='color: "+color+"' class='"+icon+"'></i>";
-            }
-        }
-
-        function makeProfileRows(profiles) {
-            var profileAdd = "";
-            $.each(profiles, function(profilesIndex, profile) {
-                profileAdd += "<div class='profile col-lg-2 col-md-2 col-sm-12 col-xs-12 container'><a href='"+profile.url+"' target='_blank' title='"+profile.name+"' class='profile-container hint--bottom hint--bounce' data-hint='"+profile.tooltip+"'>"+makeImg(profile.icontype, profile.icon, profile.color)+"</a></div>";
-            });
-            $("#contact .container #profiles").append("<div class='row'>"+profileAdd+"</div>");
-        }
-
-        makeProjectRows(wips, "wips");
-        makeProjectRows(completed, "completed");
-        makeProfileRows(profiles);
-    });
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-101624785-1', 'auto');
-  ga('send', 'pageview');
-    
-    </script>     
-
+		ga('create', 'UA-101624785-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>

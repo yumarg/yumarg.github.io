@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 100%; height: 0px; display: block; position: absolute; z-index:99999; top:0px; left:0px;"></object>
+<head>
+  <meta charset="utf-8">
+  <title>MIT2048</title>
+  <link href="gamefavicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <a id="click" class="clickme" onclick="displayBox()"><strong>Click to see what numbers the images on the tiles correspond to.</strong></a>
+  <a class="hoverme">
+    <div id="display" class="box">
+      <table class="tiles-table">
+        <tr>
+          <td class='image'><img src="img/tube-2.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/coconuts-4.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/potato-8.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/hackon-16.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/cpw-32.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/pusheen-64.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/engineering-128.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/timbeaver-256.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/MIT-512.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/class-1024.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/IHTFP_red-2048.png" width=70px height=70px/></td>
+          <td class='image'><img src="img/IHTFP_gray-super.png" width=70px height=70px/></td>
+          <td class='close'><a id="close" onclick="closeBox()" class="close"><strong>Close[X]</strong></a></td>    
+        </tr>
+      </table>
+    </div>   
+    <div id="display1" class="box1">
+      <table class="numbers-table">
+        <tr>
+          <td class='number'><p>2</p></td>
+          <td class='number'><p>4</p></td>
+          <td class='number'><p>8</p></td>
+          <td class='number'><p>16</p></td>
+          <td class='number'><p>32</p></td>
+          <td class='number'><p>64</p></td>
+          <td class='number'><p>128</p></td>
+          <td class='number'><p>256</p></td>
+          <td class='number'><p>512</p></td>
+          <td class='number'><p>1024</p></td>
+          <td class='number'><p>2048</p></td>
+          <td class='number'><p>super</p></td>
+        </tr>
+      </table>
+    </div>
+  </a>
+
+  <div class="container">
+    <div class="heading">
+      <h1 class="title"> 
+        <p class="title-MIT">MIT</p> <p class="title-co2018">'18</p> <p class="title-2048">2048</p>
+      </h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+    <div class="above-game">
+      <p class="game-intro">Combine the tiles to get just a glimpse of how awesome the <strong>MIT Class of 2018</strong> is!</p>
+      <a class="restart-button">New Game</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+          <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <p class="game-explanation">
+      <strong class="important">How to play: </strong>Use your <strong>arrow keys </strong>to move the tiles. When two tiles of the same image touch, they <strong>merge into one!</strong>
+      <br> <strong class="important">Note: </strong>The images on the tiles are intended to represent the interests, quirkiness, and awesomeness of the <strong>MIT Class of 2018</strong>.
+    </p>
+    <hr>
+    <p>
+      Created by <a href="http://web.mit.edu/margyu/www" target="_blank" title="Go to Margaret's website">Margaret Yu</a>. Inspired by an obsession with the original 2048 game, MIT Class of 2018, and <a href="http://mitchellgu.github.io/GetMIT/" target="_blank" title="Play GetMIT">GetMIT!</a> by Mitchell Gu. Based on <a href="http://gabrielecirulli.com" target="_blank" title="Play 2048">2048</a> by Gabriele Cirulli and <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank" title="Play 1024">1024</a> by Veewo Studio and conceptually similar to <a href="http://asherv.com/threes/" target="_blank" title="Play Threes">Threes</a> by Asher Vollmer.
+    </p>
+    <hr>
+    <p>
+      <strong>Background Image:</strong> Panoramic photo of the Massachusetts Institute of Technology
+      <br>
+      <strong>Photo credit:</strong> <a href="http://www.reuterphoto.com/" target="_blank" title="Go to Dominick Reuter's website">Dominick Reuter</a>, photojournalist based in Boston + Cambridge, MA.
+    </p>
+  </div>
+
+  <script src="js/tiles-list.js"> </script>
+  <script src="js/animframe_polyfill.js"> </script>
+  <script src="js/keyboard_input_manager.js"> </script>
+  <script src="js/html_actuator.js"> </script>
+  <script src="js/grid.js"> </script>
+  <script src="js/tile.js"> </script>
+  <script src="js/local_score_manager.js"> </script>
+  <script src="js/game_manager.js"> </script>
+  <script src="js/application.js"> </script>
+</body>
+</html> 
