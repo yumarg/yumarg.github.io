@@ -109,6 +109,14 @@ br {
 	text-align: center;
 }
 
+#who,
+#what,
+#when,
+#where,
+#why {
+	display: none;
+}
+
 #whoiam,
 #whatido,
 #whenimfree,

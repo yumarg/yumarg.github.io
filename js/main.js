@@ -1,9 +1,4 @@
 $(document).ready(function() {
-	$('#who').css('display', 'none');
-	$('#what').css('display', 'none');
-	$('#when').css('display', 'none');
-	$('#where').css('display', 'none');
-	$('#why').css('display', 'none');
 
 	$('[data-typer-targets]').typer();
 
