@@ -21,6 +21,10 @@ br {
 	height: 100%;
 }
 
+#home {
+	cursor: pointer;
+}
+
 .logo {
 	position: absolute;
 	top: 6%;

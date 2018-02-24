@@ -2,6 +2,15 @@ $(document).ready(function() {
 
 	$('[data-typer-targets]').typer();
 
+    $('#home').click(function() {
+        $('#homepage').css('display', 'block');
+        $('#who').css('display', 'none');
+        $('#what').css('display', 'none');
+        $('#when').css('display', 'none');
+        $('#where').css('display', 'none');
+        $('#why').css('display', 'none');
+    });
+
 	$('.hobby').on('mouseenter', function() {
 		console.log("enlarge");
 		var fontSize = parseInt($(this).css("font-size"));
