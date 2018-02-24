@@ -36,12 +36,12 @@ br {
 	cursor: pointer;
 }
 
-#left {
+.left {
 	left: 3%;
 	transform: translate(-50%, -50%);
 }
 
-#right {
+.right {
 	left: 97%;
 	transform: translate(-50%, -50%);
 }

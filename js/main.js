@@ -217,52 +217,52 @@ $(document).ready(function() {
 		$('#why').css('display', 'block');
 	});
 
-	$('#who #left').click(function() {
+	$('#who .left').click(function() {
 		$('#who').css('display', 'none');
 		$('#homepage').css('display', 'block');
 	});
 
-	$('#who #right').click(function() {
+	$('#who .right').click(function() {
 		$('#who').css('display', 'none');
 		$('#what').css('display', 'block');
 	});
 
-	$('#what #left').click(function() {
+	$('#what .left').click(function() {
 		$('#what').css('display', 'none');
 		$('#who').css('display', 'block');
 	});
 
-	$('#what #right').click(function() {
+	$('#what .right').click(function() {
 		$('#what').css('display', 'none');
 		$('#when').css('display', 'block');
 	});
 
-	$('#when #left').click(function() {
+	$('#when .left').click(function() {
 		$('#when').css('display', 'none');
 		$('#what').css('display', 'block');
 	});
 
-	$('#when #right').click(function() {
+	$('#when .right').click(function() {
 		$('#when').css('display', 'none');
 		$('#where').css('display', 'block');
 	});
 
-	$('#where #left').click(function() {
+	$('#where .left').click(function() {
 		$('#where').css('display', 'none');
 		$('#when').css('display', 'block');
 	});
 
-	$('#where #right').click(function() {
+	$('#where .right').click(function() {
 		$('#where').css('display', 'none');
 		$('#why').css('display', 'block');
 	});
 
-	$('#why #left').click(function() {
+	$('#why .left').click(function() {
 		$('#why').css('display', 'none');
 		$('#where').css('display', 'block');
 	});
 
-	$('#why #right').click(function() {
+	$('#why .right').click(function() {
 		$('#why').css('display', 'none');
 		$('#homepage').css('display', 'block');
 	});
