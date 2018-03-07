@@ -81,7 +81,7 @@ a {
 			new_move = possible_moves[move_index];
 			new_punc = possible_punctuation[punc_index];
 
-			document.getElementById("move_"+String(i+1)).innerHTML = "Number " + new_number + " " + new_move + new_punc;
+			document.getElementById("move_"+String(i+1)).innerHTML = "#" + new_number + " " + new_move + new_punc;
 			if (top != undefined && left != undefined) {
 				document.getElementById("text").style.top = top;
 				document.getElementById("text").style.left = left;
