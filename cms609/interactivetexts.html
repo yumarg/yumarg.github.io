@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name="google" content="notranslate" />
+	<title>Where's Waldo?</title>
+	<style type='text/css'>
+	body {
+		font-family: 'Courier New';
+		font-size: 20px;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+	.container {
+		width: 100%;
+		height: 100%;
+	}
+	#title {
+		font-weight: bold;
+		color: red;
+		text-align: center;
+	}
+	#title::before {
+		content: "Where's Waldo?";
+	}
+	#map {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: gray;
+	}
+	#waldo-count,
+	#stopwatch,
+	#credit {
+		width: 100%;
+		text-align: center;
+		color: red;
+		background-color: white;
+	}
+	#victory {
+		z-index: -1;
+		position: absolute;
+		width: 50%;
+		height: 200px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		background-color: red;
+		color: white;
+		font-size: 40px;
+	}
+	#replay {
+		cursor: pointer;
+		background-color: white;
+		color: red;
+	}
+	#words {
+		position; absolute;
+		padding: 5px 62px;
+	}
+	.word {
+		cursor: pointer;
+		color: white;
+		display: inline-block;
+	}
+	.word:before {
+		content: attr(data-content);
+	}
+	a {
+		text-decoration: none;
+		color: red;
+	}
+	</style>
+</head>
+<body>
+	<div id='title' style='font-size: 25px'>
+	</div>
+	<div class='container'>
+		<div id='map'>
+			<div id='waldo-count'>
+			</div>
+			<div id='stopwatch'>
+			</div>
+			<div id='credit' style='font-size: 16px;'>
+				Created by <a href="http://margaretyu.me" target="_blank">Margaret Yu</a> for <a href="http://nickm.com/classes/the_word_made_digital/2018_spring/" target="_blank">CMS.609</a>
+			</div>
+			<div id='victory'>
+			</div>
+			<div class='container'>
+				<div id='words'>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type='text/javascript'>
+var waldo_count = 0;
+var colors = {0: 'red', 1: 'white'};
+seconds = 0, minutes = 0, hours = 0;
+var t;
+
+String.prototype.shuffle = function () {
+    var a = this.split(""),
+        n = a.length;
+
+    for(var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    return a.join("");
+}
+
+function generate_map() {
+	map = "";
+	for (var num_lines = 0; num_lines < 25; num_lines++) {
+		for (var num_words = 0; num_words < 16; num_words++) {
+			new_word = 'waldo'.shuffle();
+			if (new_word == 'waldo') {
+				map += "<span><div class='waldo word' data-content = '" + new_word + '&nbsp;' + "'>";
+				waldo_count += 1;
+			}
+			else {
+				map += "<span><div class='nonwaldo word' data-content = '" + new_word + '&nbsp;' + "'>";
+			}
+			map += "</div></span>";
+		}
+		map += "<br/>";
+	}
+	if (waldo_count == 0) {
+		return generate_map();
+	}
+	return map, waldo_count;
+}
+
+function red_waldo(event) {
+	event.target.style.color = 'red';
+	temp_waldo_count = document.getElementById('waldo-count').innerHTML;
+	document.getElementById('waldo-count').innerHTML = parseInt(temp_waldo_count)-1 + " left to find.";
+	if (document.getElementById('waldo-count').innerHTML[0] == '0') {
+		clearTimeout(t);
+		document.getElementById('victory').style.zIndex = 1000;
+		document.getElementById('victory').innerHTML = 'Hooray! You found all ' + waldo_count + ' waldos with a time of ' + document.getElementById('stopwatch').innerHTML + '.' + '<div id="replay">Play again</div>';
+		document.getElementById('stopwatch').innerHTML = '00:00:00';
+		document.getElementById('replay').addEventListener('click', startGame);
+	}
+}
+
+function reset_waldo_count() {
+	waldos = document.getElementsByClassName('waldo');
+	for (var i = 0; i < waldos.length; i++) {
+		el = waldos[i];
+		el.style.color = 'white';
+	}
+	document.getElementById('waldo-count').innerHTML = waldo_count + " left to find.";
+}
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    
+    document.getElementById('stopwatch').innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+    timer();
+}
+
+function timer() {
+    t = setTimeout(add, 1000);
+}
+
+function startGame() {
+	document.getElementById('victory').style.zIndex = -1;
+	clearTimeout(t);
+	map, waldo_count = generate_map();
+	temp_waldo_count = waldo_count;
+	document.getElementById('words').innerHTML = map;
+
+	document.getElementById('waldo-count').innerHTML = waldo_count + ' left to find.';
+
+	waldos = document.getElementsByClassName('waldo');
+	for (var i = 0; i < waldos.length; i++) {
+		waldos[i].addEventListener('click', red_waldo);
+	}
+
+	nonwaldos = document.getElementsByClassName('nonwaldo');
+	for (var i = 0; i < nonwaldos.length; i++) {
+		nonwaldos[i].addEventListener('click', reset_waldo_count);
+	}
+
+	document.getElementById('stopwatch').innerHTML = '00:00:00';
+
+	timer();
+}
+
+(function() {
+	startGame();
+})();
+</script>
+</html>
