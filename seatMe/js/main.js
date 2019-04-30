@@ -13,7 +13,7 @@ $(function() {
 	 }; 
 
 	$.ajax({
-        url: "../sampleCSV.csv",
+        url: "http://margaretyu.me/seatMe/sampleCSV.csv",
         dataType: "text",
         success: function(content) {controller.readAndProcessCSV(content);},
         error: function() {console.log("couldn't load csv");}
@@ -33,6 +33,12 @@ $(function() {
 				tableToNames: {},
 				allNames: []
 			};
+		},
+
+		clear: function() {
+			data.nameToTable = {};
+			data.tableToNames = {};
+			data.allNames = [];
 		},
 
 		updateAllNames: function() {
@@ -82,7 +88,7 @@ $(function() {
 	var csvInput = {
 		init: function() {
 			$("#upload").click(function() {
-				controller.clear();
+				model.clear();
 				if (document.getElementById('input-csv').files[0] != undefined) {
 					var fileToRead = document.getElementById('input-csv').files[0];
 					controller.processCSV(fileToRead);
@@ -146,12 +152,6 @@ $(function() {
 			searchResults.init();
 		},
 
-		clear: function() {
-			data.nameToTable = {};
-			data.tableToNames = {};
-			data.allNames = [];
-		},
-
 		search: function(value) {
 			if (value != "") {
 				searchResults.clear();
@@ -197,6 +197,7 @@ $(function() {
 		},
 
 		processCSV: function(fileName) {
+			model.clear();
 			var reader = new FileReader();
 		    reader.onload = function() {
 		    	var fileContents = this.result.split("\n");
@@ -213,6 +214,7 @@ $(function() {
 		},
 
 		readAndProcessCSV: function(content) {
+			model.clear();
 			var fileContents = content.split("\n");
 	    	for (var i = 1; i < fileContents.length; i++) {
 	    		if (fileContents[i].indexOf(",")!=-1) {
@@ -226,6 +228,7 @@ $(function() {
 		},
 
 		readAndProcessJson: function(content) {
+			model.clear();
 	    	for (var i = 0; i < content.length; i++) {
 	    		model.addTableToNameMapping(content[i].table, content[i].name);
 		    	model.addNameToTableMapping(content[i].name, content[i].table);
