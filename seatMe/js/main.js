@@ -12,12 +12,12 @@ $(function() {
 	    });  
 	 }; 
 
-	$.ajax({
-        url: "http://margaretyu.me/seatMe/sampleCSV.csv",
-        dataType: "text",
-        success: function(content) {controller.readAndProcessCSV(content);},
-        error: function() {console.log("couldn't load csv");}
-     });
+	// $.ajax({
+ //        url: "http://margaretyu.me/seatMe/sampleCSV.csv",
+ //        dataType: "text",
+ //        success: function(content) {controller.readAndProcessCSV(content);},
+ //        error: function() {console.log("couldn't load csv");}
+ //     });
 
 	$.ajax({
 		url: "https://api.myjson.com/bins/kx8ew",
