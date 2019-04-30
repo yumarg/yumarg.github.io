@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Table Seating Search Tool">
+	<title>Margaret Yu</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+	<link type="text/css" href="./stylesheet.css" rel="stylesheet"/>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<h1>Seat Me!</h1>
+		</div>
+		<div class="row">
+			<p>Only CSV upload is currently supported.</p>
+			<div id="upload-csv" class="col-sm-12">
+				<button id="choose-file" class="btn-sm btn-default" type="button" style="display:inline-block;"><label for="input-csv">Choose file</label></button>
+				<input class="text-center hidden" type="file" id="input-csv" style="display:inline-block;"/>
+				<p id="filename" style="display:inline-block;"></p>
+				<button id="upload" class="btn-sm btn-default" type="button" style="display:inline-block;">Upload</button>
+			</div>
+		</div>
+		<div class="row">
+			<div id="get-table" class="col-md-6">
+				<div>
+					<label id="search-label" for="input-name">Get table for </label>
+					<input class="typeahead" type="text" id="input-name" placeholder="Enter name" style="display:inline-block;"/>
+					<button id="search" class="btn-sm btn-default" type="button" style="display:inline-block;">Search</button>
+				</div>
+			</div>
+			<div id="search-results" class="col-md-6">
+				<table id="results-table" class="table table-condensed">
+					<thead>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
