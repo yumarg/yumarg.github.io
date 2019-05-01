@@ -36,6 +36,9 @@ $(function() {
 		},
 
 		clear: function() {
+			if (typeof(Storage) !== "undefined") {
+				localStorage.clear();
+			}
 			data.nameToTable = {};
 			data.tableToNames = {};
 			data.allNames = [];
@@ -102,7 +105,9 @@ $(function() {
 						controller.processJSON(file);
 						alert("JSON successfully uploaded");
 					}
+
 				}
+				$("#upload-text").css("display", "inline-block");
 				searchResults.clear();
 				document.getElementById("input-name").value = "";
 			});
@@ -155,6 +160,22 @@ $(function() {
 			model.init();
 			fileInput.init();
 			searchResults.init();
+			if (typeof(Storage) !== "undefined") {
+			    if (localStorage.getItem("fileType")) {
+			    	$("#upload-text").css("display", "inline-block");
+			    	if (localStorage.getItem("fileType") == "csv") {
+			    		controller.readAndProcessCSV(localStorage.getItem("data"));
+			    	}
+			    	else if (localStorage.getItem("fileType") == "json") {
+			    		controller.readAndProcessJson(JSON.parse(localStorage.getItem("data")));
+			    	}
+			    }
+			    else {
+			    	$("#upload-text").css("display", "none");
+			    }
+			} else {
+			    console.log("No web storage support");
+			}
 		},
 
 		search: function(value) {
@@ -215,6 +236,7 @@ $(function() {
 				    	model.addNameToTableMapping(mapping[1], mapping[0]);
 		    		}
 		    	}
+		    	controller.saveData("csv", this.result);
 		    	controller.startAutocomplete();
 		    }
 		    reader.readAsText(fileName);	
@@ -229,6 +251,7 @@ $(function() {
 		    		model.addTableToNameMapping(content[i].table, content[i].name);
 			    	model.addNameToTableMapping(content[i].name, content[i].table);
 		    	}
+		    	controller.saveData("json", this.result);
 		    	controller.startAutocomplete();
 		    }
 		    reader.readAsText(fileName);
@@ -244,6 +267,7 @@ $(function() {
 			    	model.addNameToTableMapping(mapping[1], mapping[0]);
 	    		}
 	    	}
+	    	controller.saveData("csv", content);
 	    	controller.startAutocomplete();
 		},
 
@@ -253,7 +277,16 @@ $(function() {
 	    		model.addTableToNameMapping(content[i].table, content[i].name);
 		    	model.addNameToTableMapping(content[i].name, content[i].table);
 	    	}
+	    	controller.saveData("json", JSON.stringify(content));
 	    	controller.startAutocomplete();
+		},
+
+		saveData: function(fileType, data) {
+			if (typeof(Storage) !== "undefined") {
+				localStorage.setItem("fileType", fileType);
+				localStorage.setItem("data", data);
+				$("#upload-text").css("display", "inline-block");
+			}
 		},
 
 		startAutocomplete: function() {
