@@ -12,19 +12,19 @@ $(function() {
 	    });  
 	 }; 
 
-	$.ajax({
-        url: "http://margaretyu.me/seatMe/sampleCSV.csv",
-        dataType: "text",
-        success: function(content) {controller.readAndProcessCSV(content);},
-        error: function() {console.log("couldn't load csv");}
-     });
-
 	// $.ajax({
-	// 	url: "https://api.myjson.com/bins/129vao",
-	// 	dataType: "json",
-	// 	success: function(content) {controller.readAndProcessJson(content);},
-	// 	error: function() {console.log("couldn't load json");}
+	// 	url: "http://margaretyu.me/seatMe/sampleCSV.csv",
+	// 	dataType: "text",
+	// 	success: function(content) {controller.readAndProcessCSV(content);},
+	// 	error: function() {console.log("couldn't load csv");}
 	// });
+
+	$.ajax({
+		url: "https://api.myjson.com/bins/sicz4",
+		dataType: "json",
+		success: function(content) {controller.readAndProcessJson(content);},
+		error: function() {console.log("couldn't load json");}
+	});
 
 	var model = {
 		init: function() {
@@ -85,22 +85,28 @@ $(function() {
 		}
 	};
 
-	var csvInput = {
+	var fileInput = {
 		init: function() {
 			$("#upload").click(function() {
 				model.clear();
-				if (document.getElementById('input-csv').files[0] == undefined || document.getElementById('input-csv').files[0].name.substring(document.getElementById('input-csv').files[0].name.length-3, document.getElementById('input-csv').files[0].name.length) != "csv") {
-					alert("Please upload a CSV");
+				var file = document.getElementById('input-file').files[0];
+				if (file == undefined || (file.name.substring(file.name.length-3, file.name.length) != "csv" && file.name.substring(file.name.length-4, file.name.length) != "json")) {
+					alert("Please upload a CSV or JSON");
 				}
-				else if (document.getElementById('input-csv').files[0] != undefined) {
-					var fileToRead = document.getElementById('input-csv').files[0];
-					controller.processCSV(fileToRead);
-					alert("CSV successfully uploaded");
+				else if (file != undefined) {
+					if (file.name.substring(file.name.length-3, file.name.length) == "csv") {
+						controller.processCSV(file);
+						alert("CSV successfully uploaded");
+					}
+					else if (file.name.substring(file.name.length-4, file.name.length) == "json") {
+						controller.processJSON(file);
+						alert("JSON successfully uploaded");
+					}
 				}
 				searchResults.clear();
 				document.getElementById("input-name").value = "";
 			});
-			$("#input-csv").change(function(e) {
+			$("#input-file").change(function(e) {
 				$("#filename").text(e.target.files[0].name);
 			});
 		}
@@ -134,7 +140,7 @@ $(function() {
 		render: function(toRender) {
 			$("#results-table thead").empty();
 			$("#results-table tbody").empty();
-			$("#results-table thead").append("<td>Table</td><td>Others at table</td></tr>");
+			$("#results-table thead").append("<tr><th>Table</td><td>Others at table</th></tr>");
 			if (toRender == "") {
 				$("#results-table tbody").append("<tr><td>Person not found</td></tr>");
 			}
@@ -147,7 +153,7 @@ $(function() {
 	var controller = {
 		init: function() {
 			model.init();
-			csvInput.init();
+			fileInput.init();
 			searchResults.init();
 		},
 
@@ -212,6 +218,20 @@ $(function() {
 		    	controller.startAutocomplete();
 		    }
 		    reader.readAsText(fileName);	
+		},
+
+		processJSON: function(fileName) {
+			model.clear();
+			var reader = new FileReader();
+		    reader.onload = function() {
+		    	var content = JSON.parse(this.result);
+		    	for (var i = 0; i < content.length; i++) {
+		    		model.addTableToNameMapping(content[i].table, content[i].name);
+			    	model.addNameToTableMapping(content[i].name, content[i].table);
+		    	}
+		    	controller.startAutocomplete();
+		    }
+		    reader.readAsText(fileName);
 		},
 
 		readAndProcessCSV: function(content) {
