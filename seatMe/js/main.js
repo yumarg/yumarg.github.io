@@ -12,19 +12,19 @@ $(function() {
 	    });  
 	 }; 
 
-	// $.ajax({
- //        url: "http://margaretyu.me/seatMe/sampleCSV.csv",
- //        dataType: "text",
- //        success: function(content) {controller.readAndProcessCSV(content);},
- //        error: function() {console.log("couldn't load csv");}
- //     });
-
 	$.ajax({
-		url: "https://api.myjson.com/bins/kx8ew",
-		dataType: "json",
-		success: function(content) {controller.readAndProcessJson(content);},
-		error: function() {console.log("couldn't load json");}
-	});
+        url: "http://margaretyu.me/seatMe/sampleCSV.csv",
+        dataType: "text",
+        success: function(content) {controller.readAndProcessCSV(content);},
+        error: function() {console.log("couldn't load csv");}
+     });
+
+	// $.ajax({
+	// 	url: "https://api.myjson.com/bins/129vao",
+	// 	dataType: "json",
+	// 	success: function(content) {controller.readAndProcessJson(content);},
+	// 	error: function() {console.log("couldn't load json");}
+	// });
 
 	var model = {
 		init: function() {
@@ -42,7 +42,7 @@ $(function() {
 		},
 
 		updateAllNames: function() {
-			data.allNames = Object.keys(data.nameToTable);
+			data.allNames = Object.keys(data.nameToTable).sort();
 		},
 
 		addTableToNameMapping: function(table, name) {
@@ -89,13 +89,13 @@ $(function() {
 		init: function() {
 			$("#upload").click(function() {
 				model.clear();
-				if (document.getElementById('input-csv').files[0] != undefined) {
+				if (document.getElementById('input-csv').files[0] == undefined || document.getElementById('input-csv').files[0].name.substring(document.getElementById('input-csv').files[0].name.length-3, document.getElementById('input-csv').files[0].name.length) != "csv") {
+					alert("Please upload a CSV");
+				}
+				else if (document.getElementById('input-csv').files[0] != undefined) {
 					var fileToRead = document.getElementById('input-csv').files[0];
 					controller.processCSV(fileToRead);
 					alert("CSV successfully uploaded");
-				}
-				else if (document.getElementById('input-csv').files[0] == undefined) {
-					alert("Please upload a CSV");
 				}
 				searchResults.clear();
 				document.getElementById("input-name").value = "";
@@ -112,8 +112,7 @@ $(function() {
 				controller.search(document.getElementById("input-name").value);
 			});
 			$("#input-name").pressEnter(function() {
-				$(".typeahead").typeahead('close');
-				controller.search(document.getElementById("input-name").value)
+				controller.search(document.getElementById("input-name").value);
 			});
 			$(".tt-input").css("verticalAlign", "middle");
 		},
@@ -162,15 +161,17 @@ $(function() {
 		},
 
 		getTableGivenName: function(name) {
-			if (data.nameToTable[name.toLowerCase()]) {
-				return data.nameToTable[name.toLowerCase()];
+			for (var i=0; i<data.allNames.length; i++) {
+				if (data.allNames[i].toLowerCase() == name.toLowerCase()) {
+					return data.nameToTable[data.allNames[i]];
+				}
 			}
 			return [];
 		},
 
 		getNamesGivenTable: function(table) {
 			if (data.tableToNames[table]) {
-				return data.tableToNames[table];
+				return data.tableToNames[table].sort();
 			}
 			return [];
 		},
@@ -203,7 +204,7 @@ $(function() {
 		    	var fileContents = this.result.split("\n");
 		    	for (var i = 1; i < fileContents.length; i++) {
 		    		if (fileContents[i].indexOf(",")!=-1) {
-		    			var mapping = fileContents[i].replace(/"/g,"").replace(/\s+/g,"").split(",");
+		    			var mapping = fileContents[i].replace(/"/g,"").trim().split(",");
 			    		model.addTableToNameMapping(mapping[0], mapping[1]);
 				    	model.addNameToTableMapping(mapping[1], mapping[0]);
 		    		}
@@ -218,12 +219,11 @@ $(function() {
 			var fileContents = content.split("\n");
 	    	for (var i = 1; i < fileContents.length; i++) {
 	    		if (fileContents[i].indexOf(",")!=-1) {
-	    			var mapping = fileContents[i].replace(/"/g,"").replace(/\s+/g,"").split(",");
+	    			var mapping = fileContents[i].replace(/"/g,"").trim().split(",");
 		    		model.addTableToNameMapping(mapping[0], mapping[1]);
 			    	model.addNameToTableMapping(mapping[1], mapping[0]);
 	    		}
 	    	}
-	    	model.updateAllNames();
 	    	controller.startAutocomplete();
 		},
 
@@ -233,11 +233,11 @@ $(function() {
 	    		model.addTableToNameMapping(content[i].table, content[i].name);
 		    	model.addNameToTableMapping(content[i].name, content[i].table);
 	    	}
-	    	model.updateAllNames();
 	    	controller.startAutocomplete();
 		},
 
 		startAutocomplete: function() {
+			$('.typeahead').typeahead('destroy');
 			model.updateAllNames();
 	    	$('.typeahead').typeahead({
 				hint: true,
@@ -250,6 +250,7 @@ $(function() {
 				source: model.substringMatcher(data.allNames)
 			});
 			$('.typeahead').bind('typeahead:select', function(ev, suggestion) {
+				$(".typeahead").typeahead('close');
 				controller.search(suggestion);
 			});
 		}
