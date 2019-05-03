@@ -12,19 +12,19 @@ $(function() {
 	    });  
 	 }; 
 
-	// $.ajax({
-	// 	url: "http://margaretyu.me/seatMe/sampleCSV.csv",
-	// 	dataType: "text",
-	// 	success: function(content) {controller.readAndProcessCSV(content);},
-	// 	error: function() {console.log("couldn't load csv");}
-	// });
-
 	$.ajax({
-		url: "https://api.myjson.com/bins/sicz4",
-		dataType: "json",
-		success: function(content) {controller.readAndProcessJson(content);},
-		error: function() {console.log("couldn't load json");}
+		url: "http://margaretyu.me/seatMe/kimjeremywedding.csv",
+		dataType: "text",
+		success: function(content) {controller.readAndProcessCSV(content);},
+		error: function() {console.log("couldn't load csv");}
 	});
+
+	// $.ajax({
+	// 	url: "https://api.myjson.com/bins/sicz4",
+	// 	dataType: "json",
+	// 	success: function(content) {controller.readAndProcessJson(content);},
+	// 	error: function() {console.log("couldn't load json");}
+	// });
 
 	var model = {
 		init: function() {
