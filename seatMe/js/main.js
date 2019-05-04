@@ -180,6 +180,7 @@ $(function() {
 
 		search: function(value) {
 			if (value != "") {
+				$("#input-name").select();
 				searchResults.clear();
 				var results = controller.getTableAndOthersAtTable(value);
 				var toRender = searchResults.formatForDisplay(results);
