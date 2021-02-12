@@ -13,7 +13,7 @@ $(function() {
 	 }; 
 
 	$.ajax({
-		url: "http://margaretyu.me/seatMe/kimjeremywedding.csv",
+		url: "http://yumarg.github.io/seatMe/kimjeremywedding.csv",
 		dataType: "text",
 		success: function(content) {controller.readAndProcessCSV(content);},
 		error: function() {console.log("couldn't load csv");}
