@@ -46,7 +46,7 @@ $(document).ready(function() {
     },  
     {
         "name": "Code is Art",
-        "url": "http://margaretyu.me/codeisart",
+        "url": "http://yumarg.github.io/codeisart",
         "date": "June 2017",
         "tools": "HTML, p5.js, Processing, JavaScript, Git",
         "description": "Designed and wrote code for an animated art piece",
@@ -109,7 +109,7 @@ $(document).ready(function() {
     },       
     {
         "name": "Guess It",
-        "url": "http://margaretyu.me/GuessIt",
+        "url": "http://yumarg.github.io/GuessIt",
         "date": "June 2015",
         "tools": "HTML, CSS, JavaScript, jQuery, Git",
         "description": "Designed and wrote code for a number sequence guessing game",
@@ -127,7 +127,7 @@ $(document).ready(function() {
     },
     {
         "name": "MIT2048",
-        "url": "http://margaretyu.me/MIT2048",
+        "url": "http://yumarg.github.io/MIT2048",
         "date": "June 2014",
         "tools": "HTML, CSS, JavaScript, jQuery, Git",
         "description": "Designed an MIT-Class-of-2018-themed 2048 game",
