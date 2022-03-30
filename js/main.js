@@ -30,7 +30,16 @@ $(document).ready(function() {
     });
 
     var projects = [
-	{
+        {
+            "name": "Seat Me!",
+            "url": "https://yumarg.github.io/seatMe",
+            "date": "May 2019",
+            "tools": "HTML, CSS, JavaScript",
+            "description": "Created a tool to help wedding banquet guests quickly identify their table",
+            "picture": "images/seatme.png",
+            "types": "personal project, web app"
+        },
+	    {
             "name": "Reuse",
             "url": "https://docs.google.com/presentation/d/1MTHYYev6VI_aiPXRhQX89M7QGqcS1Iu5apUkKaPcZpU/edit?usp=sharing",
             "date": "Aug 2017 to May 2018",
@@ -52,10 +61,10 @@ $(document).ready(function() {
             "name": "Code is Art",
             "url": "http://yumarg.github.io/codeisart",
             "date": "June 2017",
-            "tools": "HTML, p5.js, Processing, JavaScript, Git",
+            "tools": "HTML, p5.js, JavaScript",
             "description": "Designed and wrote code for an animated art piece",
             "picture": "images/codeisart.gif",
-            "types": "personal project"
+            "types": "personal project, creative coding"
         },
         {
             "name": "ACCESS2",
@@ -141,7 +150,7 @@ $(document).ready(function() {
     ];
 
     var profiles = [
-	{
+	    {
             "name": "GitHub",
             "url": "https://github.com/yumarg",
             "icon": "fab fa-github fa-7x",
@@ -179,10 +188,22 @@ $(document).ready(function() {
     ];
 
     var influences = [
-	{
+	    {
             "type": "quote",
             "text": "For God has not given us a spirit of fear, but of power and of love and of a sound mind.",
             "source": "2 Tim 1:7 NKJV",
+            "picture": ""
+        },
+        {
+            "type": "quote",
+            "text": "There's a crack in everything, that's how the light gets in.",
+            "source": "Leonard Cohen, Anthem",
+            "picture": ""
+        },
+        {
+            "type": "quote",
+            "text": "Sometimes the bravest and most important thing you can do is just show up.",
+            "source": "Brené Brown, Daring Greatly",
             "picture": ""
         },
         {
