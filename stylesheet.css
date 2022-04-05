@@ -188,6 +188,15 @@ br {
 	font-size: 26px;
 }
 
+#description a {
+	color: #99e6ff;
+}
+
+#description a:hover {
+	color: #f5c01d;
+	text-decoration: none;
+}
+
 #pic {
 	position: absolute;
 	height: 300px;
